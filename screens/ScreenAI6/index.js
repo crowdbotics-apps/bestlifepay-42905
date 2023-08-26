@@ -1,8 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, Image, Button, ScrollView, FlatList } from 'react-native';
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   const dummyData = Array(10).fill({
     name: 'Company',
     logo: 'https://tinyurl.com/42evm3m3',
@@ -68,7 +71,9 @@ const ScreenComponent = () => {
         <Text>App Name</Text>
         <Button title="Contact us" onPress={() => {}} />
       </View>
-    </SafeAreaView>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI7");
+    }}><Text style={_styles.iVQwwZTw}></Text></Pressable></SafeAreaView>;
 };
 
 export default ScreenComponent;
@@ -125,5 +130,15 @@ const _styles = StyleSheet.create({
   ctiVTfCG: {
     width: 50,
     height: 50
+  },
+  iVQwwZTw: {
+    width: 329,
+    height: 32,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0,
+    position: "absolute",
+    left: 10,
+    top: -539
   }
 });
