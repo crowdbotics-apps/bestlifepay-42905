@@ -1,0 +1,129 @@
+import { StyleSheet } from "react-native";
+import React from 'react';
+import { SafeAreaView, View, Text, Image, Button, ScrollView, FlatList } from 'react-native';
+
+const ScreenComponent = () => {
+  const dummyData = Array(10).fill({
+    name: 'Company',
+    logo: 'https://tinyurl.com/42evm3m3',
+    message: 'We love this app!'
+  });
+  return <SafeAreaView style={_styles.nKcekGdY}>
+      <View style={_styles.AVijOYpk}>
+        <Image source={{
+        uri: 'https://tinyurl.com/42evm3m3'
+      }} style={_styles.lWLwhhhh} />
+        <Text>App Name</Text>
+        <Button title="Access my account" onPress={() => {}} />
+      </View>
+      <ScrollView>
+        <View style={_styles.ixHZmxWo}>
+          <Text>Textual description</Text>
+          <Button title="Create My Profile" onPress={() => {}} />
+          <Text>Trustpilot rating</Text>
+          <Image source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} style={_styles.exQLalPr} />
+          <Text>Our partners love what we do for you</Text>
+          <FlatList data={dummyData} renderItem={({
+          item
+        }) => <View style={_styles.efYiuXFQ}>
+                <Image source={{
+            uri: item.logo
+          }} style={_styles.LPLzKopK} />
+                <Text>{item.name}</Text>
+              </View>} keyExtractor={(item, index) => index.toString()} />
+          <Text>We are perfect</Text>
+          <Text>Textual details</Text>
+          <Button title="Create My Profile" onPress={() => {}} />
+          <Text>How it works</Text>
+          <Text>Steps 1 to 5</Text>
+          <Image source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} style={_styles.emmLGqhZ} />
+          <Button title="Get started" onPress={() => {}} />
+          <Text>Consumer like us, a lot!</Text>
+          <FlatList horizontal data={dummyData} renderItem={({
+          item
+        }) => <View style={_styles.HdKPhWMi}>
+                <Image source={{
+            uri: item.logo
+          }} style={_styles.bLSxjevu} />
+                <Text>{item.name}</Text>
+                <Text>{item.message}</Text>
+              </View>} keyExtractor={(item, index) => index.toString()} />
+          <Button title="Sign up now!" onPress={() => {}} />
+          <Text>Security is the highest priority</Text>
+          <Text>Textual details</Text>
+          <Image source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} style={_styles.sAvgoCUy} />
+          <Button title="Get started" onPress={() => {}} />
+        </View>
+      </ScrollView>
+      <View style={_styles.CohGkkKO}>
+        <Image source={{
+        uri: 'https://tinyurl.com/42evm3m3'
+      }} style={_styles.ctiVTfCG} />
+        <Text>App Name</Text>
+        <Button title="Contact us" onPress={() => {}} />
+      </View>
+    </SafeAreaView>;
+};
+
+export default ScreenComponent;
+
+const _styles = StyleSheet.create({
+  nKcekGdY: {
+    flex: 1
+  },
+  AVijOYpk: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10
+  },
+  lWLwhhhh: {
+    width: 50,
+    height: 50
+  },
+  ixHZmxWo: {
+    padding: 10
+  },
+  exQLalPr: {
+    width: "100%",
+    height: 200
+  },
+  efYiuXFQ: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  LPLzKopK: {
+    width: 50,
+    height: 50
+  },
+  emmLGqhZ: {
+    width: "100%",
+    height: 200
+  },
+  HdKPhWMi: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  bLSxjevu: {
+    width: 50,
+    height: 50
+  },
+  sAvgoCUy: {
+    width: "100%",
+    height: 200
+  },
+  CohGkkKO: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10
+  },
+  ctiVTfCG: {
+    width: 50,
+    height: 50
+  }
+});

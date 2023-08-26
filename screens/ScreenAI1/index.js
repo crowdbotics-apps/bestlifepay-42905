@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View, Image, Button } from 'react-native';
 
 const App = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <Image style={styles.logo} source={{
@@ -13,7 +16,9 @@ const App = () => {
         <Button title="I'm a Creator" onPress={() => {}} color="#841584" />
         <Button title="I'm a Consumer" onPress={() => {}} color="#841584" />
       </View>
-    </SafeAreaView>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI6");
+    }}><Text style={styles.xlcYHnyR}></Text></Pressable></SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
@@ -39,6 +44,16 @@ const styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
     paddingHorizontal: 50
+  },
+  xlcYHnyR: {
+    width: 259,
+    height: 75,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0,
+    position: "absolute",
+    left: 48,
+    top: -251
   }
 });
 export default App;
