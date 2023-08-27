@@ -72,10 +72,14 @@ const ScreenComponent = () => {
       }} style={_styles.ctiVTfCG} />
         <Text>App Name</Text>
         <Button title="Contact us" onPress={() => {}} />
-      </View>
+      <Pressable onPress={() => {
+        navigation.navigate("ScreenAI4");
+      }}><Text style={_styles.MdpAxMLr}>{"About the app/ FAQ"}</Text></Pressable></View>
     <Pressable onPress={() => {
       navigation.navigate("ScreenAI7");
-    }}><Text style={_styles.iVQwwZTw}></Text></Pressable></SafeAreaView>;
+    }}><Text style={_styles.iVQwwZTw}></Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI5");
+    }}><Text style={_styles.IMHsMwvL}></Text></Pressable></SafeAreaView>;
 };
 
 export default ScreenComponent;
@@ -142,5 +146,22 @@ const _styles = StyleSheet.create({
     position: "absolute",
     left: 10,
     top: -539
+  },
+  MdpAxMLr: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  IMHsMwvL: {
+    width: 103,
+    height: 51,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0,
+    position: "absolute",
+    left: 138,
+    top: -61
   }
 });
