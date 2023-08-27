@@ -1,17 +1,17 @@
-import React from 'react';
-import { SafeAreaView, View, Text, Image, TextInput, Button, StyleSheet } from 'react-native';
-import Video from 'react-native-video';
+import React from "react";
+import { SafeAreaView, View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import Video from "react-native-video";
 
 const ScreenComponent = () => {
   return <SafeAreaView style={styles.container}>
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={{
-        uri: 'https://tinyurl.com/42evm3m3'
+        uri: "https://tinyurl.com/42evm3m3"
       }} />
         <Text style={styles.appName}>App Name</Text>
       </View>
       <Video source={{
-      uri: 'https://tinyurl.com/42evm3m3'
+      uri: "https://tinyurl.com/42evm3m3"
     }} style={styles.video} />
       <View style={styles.reviewContainer}>
         <Text style={styles.review}>User Review</Text>
@@ -19,16 +19,24 @@ const ScreenComponent = () => {
       </View>
       <View style={styles.profileContainer}>
         <Image style={styles.profilePic} source={{
-        uri: 'https://tinyurl.com/42evm3m3'
+        uri: "https://tinyurl.com/42evm3m3"
       }} />
         <Text style={styles.name}>Name</Text>
       </View>
-      <Button title="Back to Home" onPress={() => {}} />
+      <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <Text style={styles.buttonText}>Back to Home</Text>
+      </TouchableOpacity>
       <TextInput style={styles.input} placeholder="Email Address" />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} />
-      <Button title="Forgot Password" onPress={() => {}} />
-      <Button title="Login" onPress={() => {}} />
-      <Button title="Don't have an account? Sign up" onPress={() => {}} />
+      <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <Text style={styles.buttonText}>Forgot Password</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={() => {}}>
+        <Text style={styles.buttonText}>Don't have an account? Sign up</Text>
+      </TouchableOpacity>
     </SafeAreaView>;
 };
 
@@ -36,11 +44,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff'
+    backgroundColor: "#fff"
   },
   logoContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 20
   },
   logo: {
@@ -50,29 +58,29 @@ const styles = StyleSheet.create({
   },
   appName: {
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: "bold"
   },
   video: {
-    width: '100%',
+    width: "100%",
     height: 200
   },
   reviewContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     marginTop: 20
   },
   review: {
     fontSize: 18,
-    fontWeight: 'bold'
+    fontWeight: "bold"
   },
   stars: {
     fontSize: 18,
-    color: '#f1c40f'
+    color: "#f1c40f"
   },
   profileContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginTop: 20
   },
   profilePic: {
@@ -83,15 +91,26 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 18,
-    fontWeight: 'bold'
+    fontWeight: "bold"
   },
   input: {
-    width: '100%',
+    width: "100%",
     height: 40,
-    borderColor: '#ddd',
+    borderColor: "#ddd",
     borderWidth: 1,
     marginTop: 20,
     paddingHorizontal: 10
+  },
+  button: {
+    marginTop: 20,
+    backgroundColor: "#007BFF",
+    padding: 10,
+    borderRadius: 5,
+    alignItems: "center"
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16
   }
 });
 export default ScreenComponent;
