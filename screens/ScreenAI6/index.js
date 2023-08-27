@@ -16,7 +16,9 @@ const ScreenComponent = () => {
         <Image source={{
         uri: 'https://tinyurl.com/42evm3m3'
       }} style={_styles.lWLwhhhh} />
-        <Text>App Name</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI3");
+      }}><Text>{"Credit network"}</Text></Pressable>
         <Button title="Access my account" onPress={() => {}} />
       </View>
       <ScrollView>
