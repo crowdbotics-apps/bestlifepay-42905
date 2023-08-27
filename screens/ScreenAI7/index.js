@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { SafeAreaView, View, Text, Image, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 import Video from "react-native-video";
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.container}>
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={{
@@ -28,7 +30,9 @@ const ScreenComponent = () => {
       </TouchableOpacity>
       <TextInput style={styles.input} placeholder="Email Address" />
       <TextInput style={styles.input} placeholder="Password" secureTextEntry={true} />
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
+      <TouchableOpacity style={styles.button} onPress={() => {
+      navigation.navigate("ScreenAI8");
+    }}>
         <Text style={styles.buttonText}>Forgot Password</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={() => {}}>
