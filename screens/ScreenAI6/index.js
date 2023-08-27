@@ -19,7 +19,7 @@ const ScreenComponent = () => {
         <Pressable onPress={() => {
         navigation.navigate("ScreenAI3");
       }}><Text>{"Credit network"}</Text></Pressable>
-        <Button title="Access my account" onPress={() => {}} />
+        <Button title="Access my account" onPress={() => {}} style={_styles.lxVmQBZX} />
       </View>
       <ScrollView>
         <View style={_styles.ixHZmxWo}>
@@ -79,7 +79,11 @@ const ScreenComponent = () => {
       navigation.navigate("ScreenAI7");
     }}><Text style={_styles.iVQwwZTw}></Text></Pressable><Pressable onPress={() => {
       navigation.navigate("ScreenAI5");
-    }}><Text style={_styles.IMHsMwvL}></Text></Pressable></SafeAreaView>;
+    }}><Text style={_styles.IMHsMwvL}></Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI61");
+    }}><Text style={_styles.EFyRRThX}></Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI7");
+    }}><Text style={_styles.FGstgZyZ}></Text></Pressable></SafeAreaView>;
 };
 
 export default ScreenComponent;
@@ -163,5 +167,28 @@ const _styles = StyleSheet.create({
     position: "absolute",
     left: 138,
     top: -61
+  },
+  EFyRRThX: {
+    width: 336,
+    height: 30,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0,
+    position: "absolute",
+    left: 5,
+    top: -540
+  },
+  lxVmQBZX: {
+    position: "relative"
+  },
+  FGstgZyZ: {
+    width: 161,
+    height: 53,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0,
+    position: "absolute",
+    left: 188,
+    top: -629
   }
 });
