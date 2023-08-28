@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
-import React from 'react';
-import { SafeAreaView, View, Text, Button, TextInput, Picker, Linking } from 'react-native';
+import React from "react";
+import { SafeAreaView, View, Text, TextInput, Picker, Linking, TouchableOpacity } from "react-native";
 
 const CreatorProfile = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={_styles.JOkpQHUO}>
       <View style={_styles.ZltfsAbp}>
         <Text style={_styles.TKffpuSb}>Set up creator profile</Text>
@@ -19,20 +21,30 @@ const CreatorProfile = () => {
         <Text>Logo & links</Text>
         <Text>Merchant Account</Text>
         <View style={_styles.ZPLExZvX}>
-          <Button title="Back" onPress={() => {}} />
-          <Button title="Next" onPress={() => {}} />
+          <TouchableOpacity style={_styles.button} onPress={() => {}}>
+            <Text style={_styles.buttonText}>Back</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={_styles.button} onPress={() => {
+          navigation.navigate("ScreenAI22");
+        }}>
+            <Text style={_styles.buttonText}>Next</Text>
+          </TouchableOpacity>
         </View>
         <Text style={_styles.NvVUCKIX}>Pay Terms</Text>
         <Text>Custom Master Terms & Conditions</Text>
         <Text>Pay Plan Rules</Text>
-        <Text style={_styles.jqaCnoWV} onPress={() => Linking.openURL('http://example.com')}>
+        <Text style={_styles.jqaCnoWV} onPress={() => Linking.openURL("http://example.com")}>
           Download Pay Term Definitions
         </Text>
         <Text style={_styles.WFzgwFID}>Custom Master Terms & Conditions</Text>
-        <Button title="Create new template" onPress={() => {}} />
+        <TouchableOpacity style={_styles.button} onPress={() => {}}>
+          <Text style={_styles.buttonText}>Create new template</Text>
+        </TouchableOpacity>
         <Text style={_styles.xMJRpcsd}>Custom Terms and Conditions</Text>
         <TextInput style={_styles.ytQGkoPz} multiline />
-        <Button title="Open default template" onPress={() => {}} />
+        <TouchableOpacity style={_styles.button} onPress={() => {}}>
+          <Text style={_styles.buttonText}>Open default template</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>;
 };
@@ -83,5 +95,15 @@ const _styles = StyleSheet.create({
     height: 200,
     borderColor: "gray",
     borderWidth: 1
+  },
+  button: {
+    backgroundColor: "#007BFF",
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 10
+  },
+  buttonText: {
+    color: "#fff",
+    textAlign: "center"
   }
 });

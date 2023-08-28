@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
-import React from 'react';
-import { SafeAreaView, View, Text, Button, TextInput, Picker, Linking } from 'react-native';
+import React from "react";
+import { SafeAreaView, View, Text, TextInput, Picker, Linking, TouchableOpacity } from "react-native";
 
 const CreatorProfileScreen = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={_styles.TzlmYcyC}>
       <Text style={_styles.PNRZXaQm}>Set up creator profile</Text>
       <Text style={_styles.UyZqqnKX}>Language</Text>
@@ -18,13 +20,19 @@ const CreatorProfileScreen = () => {
       <Text>Logo & links</Text>
       <Text>Merchant Account</Text>
       <View style={_styles.ZqKSOKQM}>
-        <Button title="Back" onPress={() => {}} />
-        <Button title="Next" onPress={() => {}} />
+        <TouchableOpacity style={_styles.buttonStyle} onPress={() => {}}>
+          <Text style={_styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={_styles.buttonStyle} onPress={() => {
+        navigation.navigate("ScreenAI23");
+      }}>
+          <Text style={_styles.buttonText}>Next</Text>
+        </TouchableOpacity>
       </View>
       <Text style={_styles.gsxizAOG}>Pay Terms</Text>
       <Text>Custom Master Terms & Conditions</Text>
       <Text>Pay Plan Rules</Text>
-      <Text style={_styles.noqVLsbH} onPress={() => Linking.openURL('http://example.com')}>
+      <Text style={_styles.noqVLsbH} onPress={() => Linking.openURL("http://example.com")}>
         Download Pay Term Definitions
       </Text>
       <Text style={_styles.XVkcpawa}>In case of a failed payment</Text>
@@ -90,5 +98,14 @@ const _styles = StyleSheet.create({
   },
   JnvmtvUK: {
     marginTop: 20
+  },
+  buttonStyle: {
+    backgroundColor: '#007BFF',
+    padding: 10,
+    borderRadius: 5
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    textAlign: 'center'
   }
 });
