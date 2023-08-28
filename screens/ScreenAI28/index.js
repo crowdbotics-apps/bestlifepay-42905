@@ -1,9 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, TextInput, Button, Image, FlatList, TouchableOpacity } from 'react-native';
 
 const MyAccountsScreen = () => {
+  const navigation = useNavigation();
   const accounts = [{
     id: '1',
     name: 'Account 1',
@@ -61,8 +63,10 @@ const MyAccountsScreen = () => {
         </TouchableOpacity>
       </View>
 
-      <Button title="Create Notice Response" onPress={() => {}} />
-    </SafeAreaView>;
+      <Button title="Create Notice Response" onPress={() => {}} style={_styles.MentWHVk} />
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI33");
+    }}><Text style={_styles.nmnjXcoT}>{"Create offer "}</Text></Pressable></SafeAreaView>;
 };
 
 export default MyAccountsScreen;
@@ -76,7 +80,9 @@ const _styles = StyleSheet.create({
     margin: 10,
     padding: 10,
     backgroundColor: "#fff",
-    borderRadius: 5
+    borderRadius: 5,
+    width: 356,
+    height: 57
   },
   ysXoHqfj: {
     flexDirection: "row",
@@ -100,6 +106,22 @@ const _styles = StyleSheet.create({
   kbieWvYO: {
     flexDirection: "row",
     justifyContent: "space-around",
-    margin: 10
+    margin: 10,
+    width: 313,
+    height: 54,
+    position: "absolute",
+    left: 25,
+    top: 366
+  },
+  MentWHVk: {
+    width: 351,
+    height: 32
+  },
+  nmnjXcoT: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
