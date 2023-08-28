@@ -29,7 +29,9 @@ const ScreenComponent = () => {
       </View>
       <ScrollView style={_styles.deVuDEoB}>
         <View style={_styles.xzzMnrec}>
-          <Text style={_styles.BIGozqiF}>Total no. of accounts you have in YouNegotiate</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI44");
+        }}><Text style={_styles.BIGozqiF}>{"Consumer Offer"}</Text></Pressable>
           <Text style={_styles.DINPbrEz}>Value</Text>
         </View>
         <View style={_styles.AfTcWbHq}>

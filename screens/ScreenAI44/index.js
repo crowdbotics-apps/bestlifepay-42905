@@ -27,7 +27,7 @@ const Item = ({
   item
 }) => <View style={_styles.thxNBbyv}>
     <Text>{item.date}</Text>
-    <Text>{item.name}</Text>
+    <Pressable><Text>{item.name}</Text></Pressable>
     <Pressable><Text>{item.client}</Text></Pressable>
     <Text>{item.balance}</Text>
     <Text>{item.status}</Text>
