@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView, View, Text, TextInput, Image, Picker, ScrollView } from "react-native";
 
 const ProfileScreen = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={_styles.ljijItdX}>
       <ScrollView>
         <View style={_styles.YQZTVRiY}>
@@ -81,7 +83,9 @@ const ProfileScreen = () => {
             <TouchableOpacity style={_styles.button}>
               <Text style={_styles.buttonText}>Back</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={_styles.button}>
+            <TouchableOpacity style={_styles.button} onPress={() => {
+            navigation.navigate("ScreenAI19");
+          }}>
               <Text style={_styles.buttonText}>Next</Text>
             </TouchableOpacity>
           </View>

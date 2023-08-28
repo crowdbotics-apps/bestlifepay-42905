@@ -1,21 +1,23 @@
-import React from 'react';
-import { SafeAreaView, View, Text, Picker, ScrollView, StyleSheet } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { SafeAreaView, View, Text, Picker, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 
 const CreatorProfileScreen = () => {
-  const [language, setLanguage] = React.useState('english');
-  const [plan, setPlan] = React.useState('basic');
+  const navigation = useNavigation();
+  const [language, setLanguage] = React.useState("english");
+  const [plan, setPlan] = React.useState("basic");
   const plans = [{
-    type: 'Basic',
-    price: '$10',
-    feature: 'Feature 1'
+    type: "Basic",
+    price: "$10",
+    feature: "Feature 1"
   }, {
-    type: 'Premium',
-    price: '$20',
-    feature: 'Feature 2'
+    type: "Premium",
+    price: "$20",
+    feature: "Feature 2"
   }, {
-    type: 'Pro',
-    price: '$30',
-    feature: 'Feature 3'
+    type: "Pro",
+    price: "$30",
+    feature: "Feature 3"
   }];
   return <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -28,13 +30,19 @@ const CreatorProfileScreen = () => {
               <Text>{plan.type}</Text>
               <Text>{plan.price}</Text>
               <Text>{plan.feature}</Text>
-              <Text onPress={() => setPlan(plan.type)} style={styles.buttonText}>
-                Choose plan
-              </Text>
+              <TouchableOpacity onPress={() => setPlan(plan.type)}>
+                <Text style={styles.buttonText}>Choose plan</Text>
+              </TouchableOpacity>
             </View>)}
           <View style={styles.buttonContainer}>
-            <Text style={styles.buttonText}>Back</Text>
-            <Text style={styles.buttonText}>Next</Text>
+            <TouchableOpacity>
+              <Text style={styles.buttonText}>Back</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+            navigation.navigate("ScreenAI15");
+          }}>
+              <Text style={styles.buttonText}>Next</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -45,14 +53,14 @@ export default CreatorProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: "#fff"
   },
   innerContainer: {
     padding: 20
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: "bold"
   },
   subtitle: {
     fontSize: 18,
@@ -60,23 +68,23 @@ const styles = StyleSheet.create({
   },
   picker: {
     height: 50,
-    width: '100%'
+    width: "100%"
   },
   planContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 10
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 20
   },
   buttonText: {
-    backgroundColor: '#007BFF',
-    color: 'white',
+    backgroundColor: "#007BFF",
+    color: "white",
     padding: 10,
     borderRadius: 5,
-    textAlign: 'center'
+    textAlign: "center"
   }
 });
