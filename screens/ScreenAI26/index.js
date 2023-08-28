@@ -1,8 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, Button, Image, Picker, TextInput } from 'react-native';
 
 const App = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={_styles.licVdgNJ}>
       <View style={_styles.ruTJjydN}>
         <Text style={_styles.xQhlXfZR}>Set up creator profile</Text>
@@ -24,9 +27,7 @@ const App = () => {
         <Button title="Skip" onPress={() => {}} />
         <Button title="Next" onPress={() => {}} />
 
-        <Image style={_styles.ZmFguFoB} source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} />
+        
 
         <Text style={_styles.OUjjsOjV}>Select primary color</Text>
         <Picker>
@@ -57,8 +58,10 @@ const App = () => {
       }} />
 
         <Button title="Export QR Code" onPress={() => {}} />
-      </View>
-    </SafeAreaView>;
+      <Pressable onPress={() => {
+        navigation.navigate("ScreenAI27");
+      }}><Text style={_styles.yfjegvoA}>{"NEXT"}</Text></Pressable></View>
+    <Text style={_styles.aFOGByHG}>Lorem ipsum…</Text></SafeAreaView>;
 };
 
 export default App;
@@ -69,7 +72,9 @@ const _styles = StyleSheet.create({
     backgroundColor: "#f5f5f5"
   },
   ruTJjydN: {
-    padding: 20
+    padding: 20,
+    width: 356,
+    height: 807
   },
   xQhlXfZR: {
     fontSize: 24,
@@ -79,11 +84,6 @@ const _styles = StyleSheet.create({
     marginTop: 20
   },
   rRfleNLK: {
-    marginTop: 20
-  },
-  ZmFguFoB: {
-    width: 100,
-    height: 100,
     marginTop: 20
   },
   OUjjsOjV: {
@@ -112,5 +112,20 @@ const _styles = StyleSheet.create({
     width: 100,
     height: 100,
     marginTop: 20
+  },
+  aFOGByHG: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  yfjegvoA: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0,
+    position: "absolute"
   }
 });
