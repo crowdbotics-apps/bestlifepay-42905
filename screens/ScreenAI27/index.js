@@ -41,7 +41,9 @@ const ScreenComponent = () => {
           <Text style={_styles.XBTlTltJ}>Value</Text>
         </View>
         <View style={_styles.lQFeFpaF}>
-          <Text style={_styles.dMiiZTQV}>No. of pending offers from consumers</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI49");
+        }}><Text style={_styles.dMiiZTQV}>{"Donation Dashboard "}</Text></Pressable>
           <Text style={_styles.dyZNPWfT}>Value</Text>
         </View>
         <View style={_styles.ypqyfOGI}>
