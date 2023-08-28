@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, Image, TextInput, Button, Picker, ScrollView, FlatList } from 'react-native';
@@ -52,7 +53,7 @@ const ScreenComponent = () => {
         <FlatList data={data} keyExtractor={(item, index) => index.toString()} renderItem={({
         item
       }) => <View style={_styles.jVzMDYSp}>
-              <Text>{item.consumerName}</Text>
+              <Pressable><Text>{item.consumerName}</Text></Pressable>
               <Text>{item.accountNo}</Text>
               <Text>{item.accountName}</Text>
               <Text>{item.discountedPayoff}</Text>

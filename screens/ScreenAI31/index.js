@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, Button, Image, CheckBox, TouchableOpacity } from 'react-native';
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   const [isSelected, setSelection] = useState(false);
   return <SafeAreaView style={_styles.SACpscXA}>
       <Text style={_styles.UwYcmpPg}>Steps</Text>
@@ -25,7 +27,9 @@ const ScreenComponent = () => {
       <TouchableOpacity style={_styles.suCKlJjV}>
         <Text style={_styles.wvKoQmwL}>Back</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={_styles.IitGXjDL}>
+      <TouchableOpacity style={_styles.IitGXjDL} onPress={() => {
+      navigation.navigate("ScreenAI41");
+    }}>
         <Text style={_styles.GzhGnKzX}>Process My Payment</Text>
       </TouchableOpacity>
     </SafeAreaView>;
