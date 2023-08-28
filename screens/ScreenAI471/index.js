@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, Button, TextInput, FlatList, Image, TouchableOpacity } from 'react-native';
@@ -19,6 +21,8 @@ const dummyData = [{
 ];
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
+
   const renderItem = ({
     item
   }) => <View style={_styles.RdDrcjeZ}>
@@ -50,7 +54,9 @@ const ScreenComponent = () => {
         <Text>Page Number</Text>
         <Button title="Next" onPress={() => console.log('Next pressed')} />
       </View>
-    </SafeAreaView>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI48");
+    }}><Text style={_styles.AmraNQVJ}>{"Import new header "}</Text></Pressable></SafeAreaView>;
 };
 
 export default ScreenComponent;
@@ -84,5 +90,12 @@ const _styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20
+  },
+  AmraNQVJ: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });

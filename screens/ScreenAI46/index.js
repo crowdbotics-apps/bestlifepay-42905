@@ -28,7 +28,7 @@ const ScreenComponent = () => {
     item
   }) => <View style={_styles.eIRHhaew}>
       <Pressable><Text>{item.name}</Text></Pressable>
-      <Text>{item.uploadedOn}</Text>
+      <Pressable><Text>{item.uploadedOn}</Text></Pressable>
       <Text>{item.uploadedBy}</Text>
       <Text>{item.uploadType}</Text>
       <Text>{item.totalRecords}</Text>
@@ -46,7 +46,7 @@ const ScreenComponent = () => {
         <Text>Page number</Text>
         <Button title="Next" onPress={() => {}} />
       </View>
-    </SafeAreaView>;
+    <Pressable><Text style={_styles.KYXyIZHF}>{"Import new header "}</Text></Pressable></SafeAreaView>;
 };
 
 export default ScreenComponent;
@@ -71,5 +71,12 @@ const _styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20
+  },
+  KYXyIZHF: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
