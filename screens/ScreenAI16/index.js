@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { SafeAreaView, StyleSheet, View, Text, Image, TextInput, Button } from 'react-native';
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.container}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={{
@@ -18,9 +21,11 @@ const ScreenComponent = () => {
       <View style={styles.buttonContainer}>
         <Button title="Return to Account Creation" onPress={() => {}} />
       </View>
-      <View style={styles.buttonContainer}>
+      <Pressable onPress={() => {
+      navigation.navigate("ScreenAI28");
+    }}><View style={styles.buttonContainer}>
         <Button title="Verify Account and Login" onPress={() => {}} />
-      </View>
+      </View></Pressable>
     </SafeAreaView>;
 };
 
@@ -54,8 +59,9 @@ const styles = StyleSheet.create({
     paddingLeft: 10
   },
   buttonContainer: {
-    width: '80%',
-    marginBottom: 20
+    width: 283,
+    marginBottom: 20,
+    height: 48
   }
 });
 export default ScreenComponent;
