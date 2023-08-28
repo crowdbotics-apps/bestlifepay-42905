@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
-import React from 'react';
-import { SafeAreaView, View, Text, TextInput, Button, Picker, Linking } from 'react-native';
+import React from "react";
+import { SafeAreaView, View, Text, TextInput, Picker, Linking, TouchableOpacity } from "react-native";
 
 const CreatorProfile = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={_styles.LnqlqUvJ}>
       <Text style={_styles.MBzVPHBP}>Set up creator profile</Text>
 
@@ -21,14 +23,22 @@ const CreatorProfile = () => {
       <Text>Merchant Account</Text>
 
       <View style={_styles.uofBVLjy}>
-        <Button title="Back" onPress={() => {}} />
-        <Button title="Next" onPress={() => {}} />
+        <TouchableOpacity style={_styles.button}>
+          <Text style={_styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={_styles.button} onPress={() => {
+        navigation.navigate("ScreenAI21");
+      }}>
+          <Text style={_styles.buttonText}>Next</Text>
+        </TouchableOpacity>
       </View>
 
       <Text style={_styles.UHKBULmU}>Pay Terms</Text>
       <Text>Custom Master Terms & Conditions</Text>
       <Text>Pay Plan Rules</Text>
-      <Text style={_styles.XCMVZZeN} onPress={() => Linking.openURL('https://tinyurl.com/42evm3m3')}>Download Pay Term Definitions</Text>
+      <Text style={_styles.XCMVZZeN} onPress={() => Linking.openURL("https://tinyurl.com/42evm3m3")}>
+        Download Pay Term Definitions
+      </Text>
 
       <Text style={_styles.IvysnQSX}>Regular Pay-terms</Text>
       <Text>Pay in Full Balance Discount %</Text>
@@ -125,5 +135,14 @@ const _styles = StyleSheet.create({
     height: 40,
     borderColor: "gray",
     borderWidth: 1
+  },
+  button: {
+    backgroundColor: '#DDDDDD',
+    padding: 10,
+    borderRadius: 5
+  },
+  buttonText: {
+    fontSize: 16,
+    color: '#000'
   }
 });
