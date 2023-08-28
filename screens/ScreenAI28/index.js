@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, TextInput, Button, Image, FlatList, TouchableOpacity } from 'react-native';
@@ -25,13 +26,13 @@ const MyAccountsScreen = () => {
 
       <FlatList data={accounts} keyExtractor={item => item.id} renderItem={({
       item
-    }) => <View style={_styles.RCTuqXNZ}>
-            <Text>{item.name}</Text>
+    }) => <Pressable><View style={_styles.RCTuqXNZ}>
+            <Pressable><Text>{item.name}</Text></Pressable>
             <Text>{item.originalBalance}</Text>
             <Text>{item.saveNow}</Text>
             <Text>{item.status}</Text>
             <Button title="See My Offers" onPress={() => {}} />
-          </View>} />
+          </View></Pressable>} />
 
       <View style={_styles.kbieWvYO}>
         <TouchableOpacity onPress={() => {}}>
