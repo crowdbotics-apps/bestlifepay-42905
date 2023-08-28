@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
-import React, { useState } from 'react';
-import { SafeAreaView, View, Text, Button, Picker, CheckBox } from 'react-native';
+import React, { useState } from "react";
+import { SafeAreaView, View, Text, TouchableOpacity, Picker, CheckBox } from "react-native";
 
 const CreatorProfile = () => {
-  const [language, setLanguage] = useState('english');
+  const [language, setLanguage] = useState("english");
   const [individual, setIndividual] = useState(false);
   const [company, setCompany] = useState(false);
   return <SafeAreaView style={_styles.MqjheXYm}>
@@ -20,8 +20,12 @@ const CreatorProfile = () => {
       <Text>Billing details</Text>
       <Text>Step-1 Business type</Text>
       <View style={_styles.XTiRxczD}>
-        <Button title="Back" onPress={() => console.log('Go to previous screen')} />
-        <Button title="Next" onPress={() => console.log('Go to next step')} />
+        <TouchableOpacity style={_styles.button} onPress={() => console.log("Go to previous screen")}>
+          <Text style={_styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={_styles.button} onPress={() => console.log("Go to next step")}>
+          <Text style={_styles.buttonText}>Next</Text>
+        </TouchableOpacity>
       </View>
       <View style={_styles.mpRtDnXU}>
         <CheckBox value={individual} onValueChange={setIndividual} />
@@ -59,5 +63,15 @@ const _styles = StyleSheet.create({
   wTIyJBzw: {
     flexDirection: "row",
     alignItems: "center"
+  },
+  button: {
+    backgroundColor: "#008CBA",
+    padding: 10,
+    borderRadius: 5,
+    margin: 10
+  },
+  buttonText: {
+    color: "white",
+    textAlign: "center"
   }
 });

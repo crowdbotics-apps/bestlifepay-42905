@@ -1,18 +1,18 @@
-import { StyleSheet } from "react-native";
-import React, { useState } from 'react';
-import { SafeAreaView, View, Text, Image, TextInput, Button, CheckBox, Linking } from 'react-native';
+import { StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import { SafeAreaView, View, Text, Image, TextInput, CheckBox, Linking } from "react-native";
 
 const ScreenComponent = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [ssn, setSsn] = useState('');
-  const [authMethod, setAuthMethod] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [ssn, setSsn] = useState("");
+  const [authMethod, setAuthMethod] = useState("");
   const [isChecked, setChecked] = useState(false);
   return <SafeAreaView style={_styles.fbNVobhH}>
       <Text style={_styles.wMsznkQQ}>App Name/Logo</Text>
       <Text style={_styles.KVhKXSNq}>Textual Description</Text>
       <Image style={_styles.cZPNFbWz} source={{
-      uri: 'https://tinyurl.com/42evm3m3'
+      uri: "https://tinyurl.com/42evm3m3"
     }} />
       <Text style={_styles.ofnGKtOn}>Display Name of User</Text>
       <Text style={_styles.qzvSlDgr}>Creditor Name</Text>
@@ -23,9 +23,13 @@ const ScreenComponent = () => {
       <TextInput style={_styles.GPCkhVpd} onChangeText={text => setAuthMethod(text)} value={authMethod} placeholder="Authentication Method" />
       <View style={_styles.DIFKPuyK}>
         <CheckBox value={isChecked} onValueChange={setChecked} />
-        <Text style={_styles.BotWsgjV} onPress={() => Linking.openURL('https://younegotiate.com/terms')}>I agree to YouNegotiate’s Terms and Conditions</Text>
+        <Text style={_styles.BotWsgjV} onPress={() => Linking.openURL("https://younegotiate.com/terms")}>
+          I agree to YouNegotiate’s Terms and Conditions
+        </Text>
       </View>
-      <Button title="Validate my account" onPress={() => console.log('Account validated')} />
+      <TouchableOpacity style={_styles.button} onPress={() => console.log("Account validated")}>
+        <Text style={_styles.buttonText}>Validate my account</Text>
+      </TouchableOpacity>
     </SafeAreaView>;
 };
 
@@ -95,5 +99,15 @@ const _styles = StyleSheet.create({
   },
   BotWsgjV: {
     marginLeft: 10
+  },
+  button: {
+    backgroundColor: "#2196F3",
+    padding: 10,
+    borderRadius: 5,
+    marginVertical: 10
+  },
+  buttonText: {
+    color: "white",
+    textAlign: "center"
   }
 });

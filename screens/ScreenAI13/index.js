@@ -1,5 +1,5 @@
-import React from 'react';
-import { SafeAreaView, View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import React from "react";
+import { SafeAreaView, View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 
 const CreatorProfile = () => {
   return <SafeAreaView style={styles.container}>
@@ -18,8 +18,12 @@ const CreatorProfile = () => {
       <TextInput style={styles.input} placeholder="Country" />
       <TextInput style={styles.input} placeholder="Zip Code" />
       <View style={styles.buttonContainer}>
-        <Button title="Back" onPress={() => {}} />
-        <Button title="Next" onPress={() => {}} />
+        <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <Text style={styles.buttonText}>Next</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>;
 };
@@ -28,25 +32,34 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#F5F5F5'
+    backgroundColor: "#F5F5F5"
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20
   },
   input: {
     height: 40,
-    borderColor: '#ccc',
+    borderColor: "#ccc",
     borderWidth: 1,
     marginBottom: 10,
     paddingLeft: 10,
     borderRadius: 5
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 20
+  },
+  button: {
+    backgroundColor: "#007BFF",
+    padding: 10,
+    borderRadius: 5
+  },
+  buttonText: {
+    color: "#fff",
+    textAlign: "center"
   }
 });
 export default CreatorProfile;
