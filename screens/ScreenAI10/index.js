@@ -8,91 +8,92 @@ const ScreenComponent = () => {
   const [ssn, setSsn] = useState('');
   const [authMethod, setAuthMethod] = useState('');
   const [isChecked, setChecked] = useState(false);
-  return <SafeAreaView style={_styles.vDSshykV}>
-      <Text style={_styles.RCPbYSTm}>App Name/Logo</Text>
-      <Text style={_styles.vsIkPTyH}>Textual Description</Text>
-      <Image style={_styles.vLzBrdXn} source={{
+  return <SafeAreaView style={_styles.fbNVobhH}>
+      <Text style={_styles.wMsznkQQ}>App Name/Logo</Text>
+      <Text style={_styles.KVhKXSNq}>Textual Description</Text>
+      <Image style={_styles.cZPNFbWz} source={{
       uri: 'https://tinyurl.com/42evm3m3'
     }} />
-      <Text style={_styles.vVJQSTjJ}>Display Name of User</Text>
-      <Text style={_styles.ySkhLPzA}>Creditor Name</Text>
-      <TextInput style={_styles.KQswAzjA} onChangeText={text => setUsername(text)} value={username} placeholder="Username" />
-      <TextInput style={_styles.uakPdKws} onChangeText={text => setPassword(text)} value={password} placeholder="Password" secureTextEntry={true} />
-      <TextInput style={_styles.bDGGseGL} onChangeText={text => setSsn(text)} value={ssn} placeholder="Last 4 digits of your SSN" keyboardType="numeric" maxLength={4} />
-      <TextInput style={_styles.IMWNfflY} onChangeText={text => setAuthMethod(text)} value={authMethod} placeholder="Authentication Method" />
-      <View style={_styles.HMUCSeyo}>
+      <Text style={_styles.ofnGKtOn}>Display Name of User</Text>
+      <Text style={_styles.qzvSlDgr}>Creditor Name</Text>
+      <Text style={_styles.KvywUmbm}>Date of Birth</Text>
+      <TextInput style={_styles.CUlilHpM} onChangeText={text => setUsername(text)} value={username} placeholder="Username" />
+      <TextInput style={_styles.AhFXmjBk} onChangeText={text => setPassword(text)} value={password} placeholder="Password" secureTextEntry />
+      <TextInput style={_styles.rgrbgWUu} onChangeText={text => setSsn(text)} value={ssn} placeholder="Last 4 digits of your SSN" keyboardType="numeric" maxLength={4} />
+      <TextInput style={_styles.GPCkhVpd} onChangeText={text => setAuthMethod(text)} value={authMethod} placeholder="Authentication Method" />
+      <View style={_styles.DIFKPuyK}>
         <CheckBox value={isChecked} onValueChange={setChecked} />
-        <Text style={_styles.JjsHzOIF} onPress={() => Linking.openURL('https://younegotiate.com/terms')}>I agree to YouNegotiate’s Terms and Conditions</Text>
+        <Text style={_styles.BotWsgjV} onPress={() => Linking.openURL('https://younegotiate.com/terms')}>I agree to YouNegotiate’s Terms and Conditions</Text>
       </View>
-      <Button title="Validate my account" onPress={() => alert('Account Validated')} disabled={!isChecked} />
+      <Button title="Validate my account" onPress={() => console.log('Account validated')} />
     </SafeAreaView>;
 };
 
 export default ScreenComponent;
 
 const _styles = StyleSheet.create({
-  vDSshykV: {
+  fbNVobhH: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center"
   },
-  RCPbYSTm: {
+  wMsznkQQ: {
     fontSize: 24,
     fontWeight: "bold"
   },
-  vsIkPTyH: {
-    fontSize: 16,
-    textAlign: "center",
+  KVhKXSNq: {
     marginVertical: 20
   },
-  vLzBrdXn: {
+  cZPNFbWz: {
     width: 200,
     height: 200
   },
-  vVJQSTjJ: {
+  ofnGKtOn: {
     fontSize: 18,
-    fontWeight: "bold",
-    marginTop: 20
+    fontWeight: "bold"
   },
-  ySkhLPzA: {
+  qzvSlDgr: {
     fontSize: 18,
-    fontWeight: "bold",
-    marginTop: 20
+    fontWeight: "bold"
   },
-  KQswAzjA: {
+  KvywUmbm: {
+    fontSize: 18,
+    fontWeight: "bold"
+  },
+  CUlilHpM: {
     height: 40,
     borderColor: "gray",
     borderWidth: 1,
     width: "80%",
-    marginTop: 20
+    marginVertical: 10
   },
-  uakPdKws: {
+  AhFXmjBk: {
     height: 40,
     borderColor: "gray",
     borderWidth: 1,
     width: "80%",
-    marginTop: 20
+    marginVertical: 10
   },
-  bDGGseGL: {
+  rgrbgWUu: {
     height: 40,
     borderColor: "gray",
     borderWidth: 1,
     width: "80%",
-    marginTop: 20
+    marginVertical: 10
   },
-  IMWNfflY: {
+  GPCkhVpd: {
     height: 40,
     borderColor: "gray",
     borderWidth: 1,
     width: "80%",
-    marginTop: 20
+    marginVertical: 10
   },
-  HMUCSeyo: {
+  DIFKPuyK: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 20
+    marginVertical: 10
   },
-  JjsHzOIF: {
+  BotWsgjV: {
     marginLeft: 10
   }
 });
