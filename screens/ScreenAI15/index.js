@@ -1,13 +1,13 @@
-import { StyleSheet } from "react-native";
-import React from 'react';
-import { SafeAreaView, View, Text, TextInput, Button, Image, Picker, ScrollView } from 'react-native';
+import { StyleSheet, TouchableOpacity } from "react-native";
+import React from "react";
+import { SafeAreaView, View, Text, TextInput, Image, Picker, ScrollView } from "react-native";
 
 const ProfileScreen = () => {
   return <SafeAreaView style={_styles.ljijItdX}>
       <ScrollView>
         <View style={_styles.YQZTVRiY}>
           <Image style={_styles.ZgcekCiD} source={{
-          uri: 'https://tinyurl.com/42evm3m3'
+          uri: "https://tinyurl.com/42evm3m3"
         }} />
           <Text style={_styles.VwEzifGU}>Creator Profile</Text>
           <Text style={_styles.bGxHBsSy}>Language</Text>
@@ -78,8 +78,12 @@ const ProfileScreen = () => {
           <Text style={_styles.fhjWbFDf}>Zip</Text>
           <TextInput style={_styles.dALCbavg} />
           <View style={_styles.cHxItvyf}>
-            <Button title="Back" onPress={() => {}} />
-            <Button title="Next" onPress={() => {}} />
+            <TouchableOpacity style={_styles.button}>
+              <Text style={_styles.buttonText}>Back</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={_styles.button}>
+              <Text style={_styles.buttonText}>Next</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -283,5 +287,15 @@ const _styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20
+  },
+  button: {
+    backgroundColor: "#007BFF",
+    padding: 10,
+    borderRadius: 5
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    textAlign: "center"
   }
 });
