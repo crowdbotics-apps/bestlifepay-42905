@@ -1,7 +1,9 @@
-import React from 'react';
-import { SafeAreaView, View, Text, TextInput, Button, Picker, StyleSheet } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { SafeAreaView, View, Text, TextInput, TouchableOpacity, Picker, StyleSheet } from "react-native";
 
 const CreatorProfile = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.container}>
       <Picker>
         <Picker.Item label="English" value="english" />
@@ -20,8 +22,14 @@ const CreatorProfile = () => {
       <TextInput style={styles.input} placeholder="Country Name" />
       <TextInput style={styles.input} placeholder="Zip Code" />
       <View style={styles.buttonContainer}>
-        <Button title="Back" onPress={() => {}} />
-        <Button title="Next" onPress={() => {}} />
+        <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => {
+        navigation.navigate("ScreenAI13");
+      }}>
+          <Text style={styles.buttonText}>Next</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>;
 };
@@ -30,24 +38,34 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#fff'
+    backgroundColor: "#fff"
   },
   header: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 20
   },
   input: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: "gray",
     borderWidth: 1,
     marginBottom: 10,
     paddingLeft: 10
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 20
+  },
+  button: {
+    backgroundColor: "#007BFF",
+    padding: 10,
+    borderRadius: 5
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    textAlign: "center"
   }
 });
 export default CreatorProfile;

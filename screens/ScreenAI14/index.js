@@ -1,45 +1,40 @@
-import { StyleSheet } from "react-native";
-import React from "react";
-import { SafeAreaView, View, Text, TouchableOpacity, Picker, ScrollView } from "react-native";
+import React from 'react';
+import { SafeAreaView, View, Text, Picker, ScrollView, StyleSheet } from 'react-native';
 
 const CreatorProfileScreen = () => {
-  const [language, setLanguage] = React.useState("english");
-  const [plan, setPlan] = React.useState("basic");
+  const [language, setLanguage] = React.useState('english');
+  const [plan, setPlan] = React.useState('basic');
   const plans = [{
-    type: "Basic",
-    price: "$10",
-    feature: "Feature 1"
+    type: 'Basic',
+    price: '$10',
+    feature: 'Feature 1'
   }, {
-    type: "Premium",
-    price: "$20",
-    feature: "Feature 2"
+    type: 'Premium',
+    price: '$20',
+    feature: 'Feature 2'
   }, {
-    type: "Pro",
-    price: "$30",
-    feature: "Feature 3"
+    type: 'Pro',
+    price: '$30',
+    feature: 'Feature 3'
   }];
-  return <SafeAreaView style={_styles.vYQaTMwn}>
+  return <SafeAreaView style={styles.container}>
       <ScrollView>
-        <View style={_styles.vorEyqkU}>
-          <Text style={_styles.QwcMNRHJ}>Set up creator profile</Text>
-          <Text style={_styles.xIMduUey}>Language</Text>
-          <Picker selectedValue={language} style={_styles.jxVdLmMS} onValueChange={itemValue => setLanguage(itemValue)}></Picker>
-          <Text style={_styles.RdRoryGh}>Choose Membership plan</Text>
-          {plans.map((plan, index) => <View key={index} style={_styles.CmQjmnqj}>
+        <View style={styles.innerContainer}>
+          <Text style={styles.title}>Set up creator profile</Text>
+          <Text style={styles.subtitle}>Language</Text>
+          <Picker selectedValue={language} style={styles.picker} onValueChange={itemValue => setLanguage(itemValue)}></Picker>
+          <Text style={styles.subtitle}>Choose Membership plan</Text>
+          {plans.map((plan, index) => <View key={index} style={styles.planContainer}>
               <Text>{plan.type}</Text>
               <Text>{plan.price}</Text>
               <Text>{plan.feature}</Text>
-              <TouchableOpacity onPress={() => setPlan(plan.type)}>
-                <Text style={_styles.buttonText}>Choose plan</Text>
-              </TouchableOpacity>
+              <Text onPress={() => setPlan(plan.type)} style={styles.buttonText}>
+                Choose plan
+              </Text>
             </View>)}
-          <View style={_styles.wuIEsBHt}>
-            <TouchableOpacity onPress={() => {}}>
-              <Text style={_styles.buttonText}>Back</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}} style={_styles.JUbZGpbt}>
-              <Text style={_styles.buttonText}>Next</Text>
-            </TouchableOpacity>
+          <View style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>Back</Text>
+            <Text style={styles.buttonText}>Next</Text>
           </View>
         </View>
       </ScrollView>
@@ -47,45 +42,35 @@ const CreatorProfileScreen = () => {
 };
 
 export default CreatorProfileScreen;
-
-const _styles = StyleSheet.create({
-  vYQaTMwn: {
+const styles = StyleSheet.create({
+  container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: '#fff'
   },
-  vorEyqkU: {
+  innerContainer: {
     padding: 20
   },
-  QwcMNRHJ: {
+  title: {
     fontSize: 24,
-    fontWeight: "bold"
+    fontWeight: 'bold'
   },
-  xIMduUey: {
+  subtitle: {
     fontSize: 18,
     marginTop: 20
   },
-  jxVdLmMS: {
+  picker: {
     height: 50,
-    width: "100%"
+    width: '100%'
   },
-  RdRoryGh: {
-    fontSize: 18,
-    marginTop: 20
-  },
-  CmQjmnqj: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+  planContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     marginTop: 10
   },
-  wuIEsBHt: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 20,
-    width: 306,
-    height: 32
-  },
-  JUbZGpbt: {
-    position: "relative"
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20
   },
   buttonText: {
     backgroundColor: '#007BFF',

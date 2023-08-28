@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from "react";
-import { SafeAreaView, View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, TextInput, StyleSheet } from "react-native";
 
 const CreatorProfile = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Step 3 - Owner's Info</Text>
       <TextInput style={styles.input} placeholder="First Name" />
@@ -18,12 +21,10 @@ const CreatorProfile = () => {
       <TextInput style={styles.input} placeholder="Country" />
       <TextInput style={styles.input} placeholder="Zip Code" />
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => {}}>
-          <Text style={styles.buttonText}>Back</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => {}}>
-          <Text style={styles.buttonText}>Next</Text>
-        </TouchableOpacity>
+        <Text style={styles.button}>Back</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI14");
+      }}><Text style={styles.button}>Next</Text></Pressable>
       </View>
     </SafeAreaView>;
 };
@@ -55,9 +56,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#007BFF",
     padding: 10,
-    borderRadius: 5
-  },
-  buttonText: {
+    borderRadius: 5,
     color: "#fff",
     textAlign: "center"
   }
