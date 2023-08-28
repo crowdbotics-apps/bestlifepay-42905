@@ -68,7 +68,9 @@ const MyAccountsScreen = () => {
       navigation.navigate("ScreenAI33");
     }}><Text style={_styles.nmnjXcoT}>{"Create offer "}</Text></Pressable><Pressable onPress={() => {
       navigation.navigate("ScreenAI37");
-    }}><Text style={_styles.wtzBEGqZ}>{"EcoMailbox"}</Text></Pressable></SafeAreaView>;
+    }}><Text style={_styles.wtzBEGqZ}>{"EcoMailbox"}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI39");
+    }}><Text style={_styles.MArrLtDb}>{"My Pay Calendar"}</Text></Pressable></SafeAreaView>;
 };
 
 export default MyAccountsScreen;
@@ -127,6 +129,13 @@ const _styles = StyleSheet.create({
     borderRadius: 0
   },
   wtzBEGqZ: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  MArrLtDb: {
     width: 100,
     height: 50,
     lineHeight: 14,
