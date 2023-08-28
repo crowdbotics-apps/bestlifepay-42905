@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
-import React from 'react';
-import { SafeAreaView, View, Text, Button, Image, Picker, TextInput } from 'react-native';
+import React from "react";
+import { SafeAreaView, View, Text, Image, Picker, TextInput, TouchableOpacity } from "react-native";
 
 const CreatorProfile = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={_styles.lQdMJKlt}>
       <View style={_styles.ZHmwkflZ}>
         <Text>Set up creator profile</Text>
@@ -16,11 +18,19 @@ const CreatorProfile = () => {
         <Text>Import Header Profiles</Text>
         <Text>Create Sub Accounts</Text>
         <Text>Logo & links</Text>
-        <Button title="Back" onPress={() => {}} />
-        <Button title="Skip" onPress={() => {}} />
-        <Button title="Next" onPress={() => {}} />
+        <TouchableOpacity style={_styles.button}>
+          <Text>Back</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={_styles.button}>
+          <Text>Skip</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={_styles.button} onPress={() => {
+        navigation.navigate("ScreenAI27");
+      }}>
+          <Text>Next</Text>
+        </TouchableOpacity>
         <Image source={{
-        uri: 'https://tinyurl.com/42evm3m3'
+        uri: "https://tinyurl.com/42evm3m3"
       }} style={_styles.QlYSjgFv} />
         <Picker>
           <Picker.Item label="Select primary color" value="primary" />
@@ -30,19 +40,27 @@ const CreatorProfile = () => {
           <Picker.Item label="Select secondary color" value="secondary" />
         </Picker>
         <View style={_styles.exARpCor} />
-        <Button title="Preview logo" onPress={() => {}} />
-        <Button title="Save" onPress={() => {}} />
-        <Button title="Cancel changes" onPress={() => {}} />
+        <TouchableOpacity style={_styles.button}>
+          <Text>Preview logo</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={_styles.button}>
+          <Text>Save</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={_styles.button}>
+          <Text>Cancel changes</Text>
+        </TouchableOpacity>
         <Text>Embed code for your website</Text>
         <TextInput placeholder="Code" />
         <Image source={{
-        uri: 'https://tinyurl.com/42evm3m3'
+        uri: "https://tinyurl.com/42evm3m3"
       }} style={_styles.XbWaaoin} />
         <Text>Join YouNegotiate QR Code</Text>
         <Image source={{
-        uri: 'https://tinyurl.com/42evm3m3'
+        uri: "https://tinyurl.com/42evm3m3"
       }} style={_styles.ukojZxwq} />
-        <Button title="Export QR Code" onPress={() => {}} />
+        <TouchableOpacity style={_styles.button}>
+          <Text>Export QR Code</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>;
 };
@@ -78,5 +96,11 @@ const _styles = StyleSheet.create({
   ukojZxwq: {
     width: 100,
     height: 100
+  },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    margin: 10
   }
 });

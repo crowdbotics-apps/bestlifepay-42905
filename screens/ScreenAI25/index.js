@@ -1,24 +1,26 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
-import React from 'react';
-import { SafeAreaView, View, Text, Button, Image, ScrollView, Picker, FlatList, TouchableOpacity } from 'react-native';
+import React from "react";
+import { SafeAreaView, View, Text, Image, ScrollView, Picker, FlatList, TouchableOpacity } from "react-native";
 
 const CreatorProfile = () => {
-  const [language, setLanguage] = React.useState('english');
+  const navigation = useNavigation();
+  const [language, setLanguage] = React.useState("english");
   const subAccounts = [{
-    id: '1',
-    name: 'Sub Account 1'
+    id: "1",
+    name: "Sub Account 1"
   }, {
-    id: '2',
-    name: 'Sub Account 2'
+    id: "2",
+    name: "Sub Account 2"
   }, {
-    id: '3',
-    name: 'Sub Account 3'
+    id: "3",
+    name: "Sub Account 3"
   }];
   return <SafeAreaView style={_styles.jjGJvgEb}>
       <ScrollView>
         <View style={_styles.gXyRVeAD}>
           <Image style={_styles.BniDWfAM} source={{
-          uri: 'https://tinyurl.com/42evm3m3'
+          uri: "https://tinyurl.com/42evm3m3"
         }} />
           <Picker selectedValue={language} onValueChange={itemValue => setLanguage(itemValue)}>
             <Picker.Item label="English" value="english" />
@@ -32,9 +34,17 @@ const CreatorProfile = () => {
           <Text>Logo & links</Text>
           <Text>Create Sub Accounts</Text>
           <View style={_styles.WzMtxsKy}>
-            <Button title="Back" onPress={() => {}} />
-            <Button title="Skip" onPress={() => {}} />
-            <Button title="Next" onPress={() => {}} />
+            <TouchableOpacity style={_styles.button} onPress={() => {}}>
+              <Text style={_styles.buttonText}>Back</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={_styles.button} onPress={() => {}}>
+              <Text style={_styles.buttonText}>Skip</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={_styles.button} onPress={() => {
+            navigation.navigate("ScreenAI26");
+          }}>
+              <Text style={_styles.buttonText}>Next</Text>
+            </TouchableOpacity>
           </View>
           <Text style={_styles.BqYpXtXE}>Sub Accounts</Text>
           <FlatList data={subAccounts} keyExtractor={item => item.id} renderItem={({
@@ -46,7 +56,9 @@ const CreatorProfile = () => {
                   <Text style={_styles.mKZDqZmm}>Edit/View</Text>
                 </TouchableOpacity>
               </View>} />
-          <Button title="Create Sub Account" onPress={() => {}} />
+          <TouchableOpacity style={_styles.button} onPress={() => {}}>
+            <Text style={_styles.buttonText}>Create Sub Account</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>;
@@ -89,5 +101,15 @@ const _styles = StyleSheet.create({
   },
   mKZDqZmm: {
     color: "blue"
+  },
+  button: {
+    backgroundColor: "#DDDDDD",
+    padding: 10,
+    borderRadius: 5,
+    margin: 5
+  },
+  buttonText: {
+    color: "#000",
+    textAlign: "center"
   }
 });

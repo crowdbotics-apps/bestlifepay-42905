@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView, Text, TextInput, Picker, ScrollView } from "react-native";
 
 const App = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={_styles.RRGBxtqG}>
       <ScrollView style={_styles.IQUGnGGX}>
         <Text style={_styles.ZfdWMQRo}>Creator Profile</Text>
@@ -24,7 +26,9 @@ const App = () => {
         <TouchableOpacity style={_styles.button}>
           <Text style={_styles.buttonText}>Skip</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={_styles.button}>
+        <TouchableOpacity style={_styles.button} onPress={() => {
+        navigation.navigate("ScreenAI25");
+      }}>
           <Text style={_styles.buttonText}>Next</Text>
         </TouchableOpacity>
         <TouchableOpacity style={_styles.button}>
