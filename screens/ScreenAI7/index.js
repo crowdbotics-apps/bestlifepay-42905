@@ -38,7 +38,9 @@ const ScreenComponent = () => {
       <TouchableOpacity style={styles.button} onPress={() => {}}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
+      <TouchableOpacity style={styles.button} onPress={() => {
+      navigation.navigate("ScreenAI11");
+    }}>
         <Text style={styles.buttonText}>Don't have an account? Sign up</Text>
       </TouchableOpacity>
     </SafeAreaView>;

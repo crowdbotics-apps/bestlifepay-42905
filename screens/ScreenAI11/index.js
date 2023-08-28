@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView, View, Text, TouchableOpacity, Picker, CheckBox } from "react-native";
 
 const CreatorProfile = () => {
+  const navigation = useNavigation();
   const [language, setLanguage] = useState("english");
   const [individual, setIndividual] = useState(false);
   const [company, setCompany] = useState(false);
@@ -23,7 +25,9 @@ const CreatorProfile = () => {
         <TouchableOpacity style={_styles.button} onPress={() => console.log("Go to previous screen")}>
           <Text style={_styles.buttonText}>Back</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={_styles.button} onPress={() => console.log("Go to next step")}>
+        <TouchableOpacity style={_styles.button} onPress={() => {
+        navigation.navigate("ScreenAI12");
+      }}>
           <Text style={_styles.buttonText}>Next</Text>
         </TouchableOpacity>
       </View>

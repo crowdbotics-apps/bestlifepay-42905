@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView, View, Text, Image, TextInput, CheckBox, Linking } from "react-native";
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [ssn, setSsn] = useState("");
@@ -27,7 +29,9 @@ const ScreenComponent = () => {
           I agree to YouNegotiate’s Terms and Conditions
         </Text>
       </View>
-      <TouchableOpacity style={_styles.button} onPress={() => console.log("Account validated")}>
+      <TouchableOpacity style={_styles.button} onPress={() => {
+      navigation.navigate("ScreenAI16");
+    }}>
         <Text style={_styles.buttonText}>Validate my account</Text>
       </TouchableOpacity>
     </SafeAreaView>;
