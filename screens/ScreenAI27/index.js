@@ -1,9 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, Image, TextInput, Button, Picker, ScrollView, FlatList } from 'react-native';
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   const data = Array(5).fill({
     consumerName: 'John Doe',
     accountNo: '123456',
@@ -31,7 +33,9 @@ const ScreenComponent = () => {
           <Text style={_styles.DINPbrEz}>Value</Text>
         </View>
         <View style={_styles.AfTcWbHq}>
-          <Text style={_styles.PGmgNWpg}>Total Original Balance amount you are owed</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI46");
+        }}><Text style={_styles.PGmgNWpg}>{"Import header"}</Text></Pressable>
           <Text style={_styles.XBTlTltJ}>Value</Text>
         </View>
         <View style={_styles.lQFeFpaF}>
