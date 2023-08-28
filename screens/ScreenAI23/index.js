@@ -1,8 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, Button, TextInput, Picker, Image, TouchableOpacity } from 'react-native';
 
 const CreatorProfile = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={_styles.ondBtsSX}>
       <View style={_styles.NvkpotMK}>
         <Text style={_styles.mToOMlqD}>Set up creator profile</Text>
@@ -18,11 +21,13 @@ const CreatorProfile = () => {
         <Text>Create Sub Accounts</Text>
         <Text>Logo & links</Text>
         <Text>Import Header Profiles</Text>
-        <View style={_styles.lMFdeCiZ}>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI24");
+      }}><View style={_styles.lMFdeCiZ}>
           <Button title="Back" onPress={() => {}} />
           <Button title="Next" onPress={() => {}} />
           <Button title="Skip" onPress={() => {}} />
-        </View>
+        </View></Pressable>
         <TouchableOpacity onPress={() => {}}>
           <Text style={_styles.oqUTMLeo}>Download sample header</Text>
         </TouchableOpacity>
