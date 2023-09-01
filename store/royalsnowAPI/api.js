@@ -1,6 +1,6 @@
 import axios from "axios"
 const royalsnowAPI = axios.create({
-  baseURL: "https://you-negotiate-42905.botics.co",
+  baseURL: "https://bestlifepay-42905.botics.co",
   headers: { Accept: "application/json", "Content-Type": "application/json" }
 })
 function api_docs_schema_retrieve(payload) {
