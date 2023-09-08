@@ -25,8 +25,75 @@ class LoanAccount(models.Model):
     name = models.TextField()
     originalBalance = models.FloatField()
     saveNowPercentage = models.FloatField()
+    payments = models.ManyToManyField("home.Payment",blank=True,related_name="loanaccount_payments",null=True,)
 class Payment(models.Model):
     'Generated Model'
     transactionDate = models.DateTimeField()
     amount = models.FloatField()
     status = models.IntegerField()
+class BusinessOwnerData(models.Model):
+    'Generated Model'
+    firstName = models.TextField()
+    lastName = models.TextField()
+    phone = models.TextField()
+    percentOwned = models.IntegerField()
+    jobTitle = models.TextField()
+    address = models.TextField()
+    state = models.OneToOneField("home.State",on_delete=models.CASCADE,related_name="businessownerdata_state",)
+    city = models.OneToOneField("home.City",on_delete=models.CASCADE,related_name="businessownerdata_city",)
+    country = models.OneToOneField("home.Country",on_delete=models.CASCADE,related_name="businessownerdata_country",)
+    zipCode = models.TextField()
+class MembershipPlan(models.Model):
+    'Generated Model'
+    name = models.TextField()
+    description = models.TextField()
+    monthlyPrice = models.FloatField()
+    anualPrice = models.FloatField()
+class State(models.Model):
+    'Generated Model'
+    name = models.TextField()
+class BillingDetails(models.Model):
+    'Generated Model'
+    nameOnCheck = models.TextField()
+    routingNumber = models.TextField()
+    accountNumer = models.TextField()
+    achFormat = models.TextField()
+    state = models.OneToOneField("home.State",on_delete=models.CASCADE,related_name="billingdetails_state",)
+    accountType = models.IntegerField()
+    zip = models.TextField()
+    cardNumber = models.TextField()
+    cardHoldername = models.TextField()
+    billAddrFirstname = models.TextField()
+    billAddrLastname = models.TextField()
+    billAddr = models.TextField()
+    billAddrCity = models.OneToOneField("home.City",on_delete=models.CASCADE,related_name="billingdetails_billAddrCity",)
+    billAddrState = models.OneToOneField("home.State",on_delete=models.CASCADE,related_name="billingdetails_billAddrState",)
+    billAddrCountry = models.OneToOneField("home.Country",on_delete=models.CASCADE,related_name="billingdetails_billAddrCountry",)
+    billAddrZipCode = models.TextField()
+class Country(models.Model):
+    'Generated Model'
+    name = models.TextField()
+class Subscription(models.Model):
+    'Generated Model'
+    status = models.IntegerField()
+    lastPaymentDate = models.DateField()
+    nextPaymentDate = models.DateField()
+    plan = models.OneToOneField("home.MembershipPlan",on_delete=models.CASCADE,related_name="subscription_plan",)
+class CreditorBusinessData(models.Model):
+    'Generated Model'
+    businessType = models.IntegerField()
+    businessName = models.TextField()
+    legalBusinessName = models.TextField()
+    companyEmail = models.EmailField(max_length=254,)
+    taxIdNumber = models.TextField()
+    phone = models.TextField()
+    companyWebsite = models.URLField()
+    address1 = models.TextField()
+    address2 = models.TextField()
+    state = models.OneToOneField("home.State",on_delete=models.CASCADE,null=True,blank=True,related_name="creditorbusinessdata_state",)
+    country = models.OneToOneField("home.Country",on_delete=models.CASCADE,null=True,blank=True,related_name="creditorbusinessdata_country",)
+    zipCode = models.TextField(null=True,blank=True,)
+    ownerData = models.OneToOneField("home.BusinessOwnerData",on_delete=models.CASCADE,null=True,blank=True,related_name="creditorbusinessdata_ownerData",)
+class City(models.Model):
+    'Generated Model'
+    name = models.TextField()

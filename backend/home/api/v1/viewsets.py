@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,ConsumerOffer,ImportedFile,LoanAccount,Payment,ConsumerOffer,ImportedFile,LoanAccount,Payment
-from .serializers import ImportedFileSerializer,ConsumerOfferSerializer,LoanAccountSerializer,PaymentSerializer,ConsumerOfferSerializer,ImportedFileSerializer,LoanAccountSerializer,PaymentSerializer,ConsumerOfferSerializer,ImportedFileSerializer,LoanAccountSerializer,PaymentSerializer
+from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,BillingDetails,BusinessOwnerData,City,ConsumerOffer,Country,CreditorBusinessData,ImportedFile,LoanAccount,MembershipPlan,Payment,State,Subscription,BillingDetails,BusinessOwnerData,City,ConsumerOffer,Country,CreditorBusinessData,ImportedFile,LoanAccount,MembershipPlan,Payment,State,Subscription
+from .serializers import ImportedFileSerializer,ConsumerOfferSerializer,LoanAccountSerializer,PaymentSerializer,BusinessOwnerDataSerializer,MembershipPlanSerializer,StateSerializer,BillingDetailsSerializer,CountrySerializer,SubscriptionSerializer,CreditorBusinessDataSerializer,CitySerializer,BillingDetailsSerializer,BusinessOwnerDataSerializer,CitySerializer,ConsumerOfferSerializer,CountrySerializer,CreditorBusinessDataSerializer,ImportedFileSerializer,LoanAccountSerializer,MembershipPlanSerializer,PaymentSerializer,StateSerializer,SubscriptionSerializer,BillingDetailsSerializer,BusinessOwnerDataSerializer,CitySerializer,ConsumerOfferSerializer,CountrySerializer,CreditorBusinessDataSerializer,ImportedFileSerializer,LoanAccountSerializer,MembershipPlanSerializer,PaymentSerializer,StateSerializer,SubscriptionSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -52,3 +52,43 @@ class PaymentViewSet(viewsets.ModelViewSet):
     serializer_class = PaymentSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Payment.objects.all()
+
+class BusinessOwnerDataViewSet(viewsets.ModelViewSet):
+    serializer_class = BusinessOwnerDataSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = BusinessOwnerData.objects.all()
+
+class MembershipPlanViewSet(viewsets.ModelViewSet):
+    serializer_class = MembershipPlanSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = MembershipPlan.objects.all()
+
+class StateViewSet(viewsets.ModelViewSet):
+    serializer_class = StateSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = State.objects.all()
+
+class BillingDetailsViewSet(viewsets.ModelViewSet):
+    serializer_class = BillingDetailsSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = BillingDetails.objects.all()
+
+class CountryViewSet(viewsets.ModelViewSet):
+    serializer_class = CountrySerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Country.objects.all()
+
+class SubscriptionViewSet(viewsets.ModelViewSet):
+    serializer_class = SubscriptionSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Subscription.objects.all()
+
+class CreditorBusinessDataViewSet(viewsets.ModelViewSet):
+    serializer_class = CreditorBusinessDataSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = CreditorBusinessData.objects.all()
+
+class CityViewSet(viewsets.ModelViewSet):
+    serializer_class = CitySerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = City.objects.all()

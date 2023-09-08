@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,ConsumerOffer,ImportedFile,LoanAccount,Payment
+from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,BillingDetails,BusinessOwnerData,City,ConsumerOffer,Country,CreditorBusinessData,ImportedFile,LoanAccount,MembershipPlan,Payment,State,Subscription
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -98,4 +98,52 @@ class PaymentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Payment
+        fields = "__all__"
+
+class BusinessOwnerDataSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = BusinessOwnerData
+        fields = "__all__"
+
+class MembershipPlanSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = MembershipPlan
+        fields = "__all__"
+
+class StateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = State
+        fields = "__all__"
+
+class BillingDetailsSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = BillingDetails
+        fields = "__all__"
+
+class CountrySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Country
+        fields = "__all__"
+
+class SubscriptionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Subscription
+        fields = "__all__"
+
+class CreditorBusinessDataSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = CreditorBusinessData
+        fields = "__all__"
+
+class CitySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = City
         fields = "__all__"
