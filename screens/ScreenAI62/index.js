@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import React from "react";
 import { SafeAreaView, View, Text, TextInput, Image, ScrollView, TouchableOpacity } from "react-native";
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   const dummyData = Array(10).fill({
     fileName: "File 1",
     createdOn: "01/01/2021",
@@ -18,16 +20,24 @@ const ScreenComponent = () => {
         <View style={_styles.aCLIzFlK}>
           <Text style={_styles.nEPJOXXf}>Options</Text>
           <Text>Click on any option to go to the respective screen</Text>
-          <TouchableOpacity style={_styles.button} onPress={() => {}}>
-            <Text style={_styles.buttonText}>Summery</Text>
+          <TouchableOpacity style={_styles.button} onPress={() => {
+          navigation.navigate("ScreenAI63");
+        }}>
+            <Text style={_styles.buttonText}>{"Create Template"}</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={_styles.button} onPress={() => {}}>
+          <TouchableOpacity style={_styles.button} onPress={() => {
+          navigation.navigate("ScreenAI69");
+        }}>
             <Text style={_styles.buttonText}>Campaign History</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={_styles.button} onPress={() => {}}>
+          <TouchableOpacity style={_styles.button} onPress={() => {
+          navigation.navigate("ScreenAI71");
+        }}>
             <Text style={_styles.buttonText}>Consumer Status</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={_styles.button} onPress={() => {}}>
+          <TouchableOpacity style={_styles.button} onPress={() => {
+          navigation.navigate("ScreenAI72");
+        }}>
             <Text style={_styles.buttonText}>Campaign Performance</Text>
           </TouchableOpacity>
           <TouchableOpacity style={_styles.button} onPress={() => {}}>
@@ -36,16 +46,24 @@ const ScreenComponent = () => {
           <TouchableOpacity style={_styles.button} onPress={() => {}}>
             <Text style={_styles.buttonText}>Show 10 (Edit) entries</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={_styles.button} onPress={() => {}}>
+          <TouchableOpacity style={_styles.button} onPress={() => {
+          navigation.navigate("ScreenAI67");
+        }}>
             <Text style={_styles.buttonText}>Download report- CSV Download</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={_styles.button} onPress={() => {}}>
+          <TouchableOpacity style={_styles.button} onPress={() => {
+          navigation.navigate("ScreenAI64");
+        }}>
             <Text style={_styles.buttonText}>Choose template</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={_styles.button} onPress={() => {}}>
+          <TouchableOpacity style={_styles.button} onPress={() => {
+          navigation.navigate("ScreenAI65");
+        }}>
             <Text style={_styles.buttonText}>Create group</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={_styles.button} onPress={() => {}}>
+          <TouchableOpacity style={_styles.button} onPress={() => {
+          navigation.navigate("ScreenAI66");
+        }}>
             <Text style={_styles.buttonText}>Schedule campaign</Text>
           </TouchableOpacity>
           <TextInput placeholder="Search bar" style={_styles.FXgVFHNU} />
