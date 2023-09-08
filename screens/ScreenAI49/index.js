@@ -21,7 +21,7 @@ const totalAmount = donations.reduce((total, donation) => total + donation.amoun
 
 const DonationScreen = () => <SafeAreaView style={styles.container}>
     <Button title="Donate NOW" onPress={() => {}} />
-    <Text style={styles.title}>Recent Donations</Text>
+    <Pressable><Text style={styles.title}>{"Donate Now"}</Text></Pressable>
     <FlatList data={donations} keyExtractor={item => item.date} renderItem={({
     item
   }) => <View style={styles.listItem}>

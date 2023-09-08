@@ -22,7 +22,7 @@ const ScreenComponent = () => {
       <View style={styles.paymentOptions}>
         <Text style={styles.title}>Payment options</Text>
         {dummyData.paymentOptions.map((option, index) => <Pressable onPress={() => {
-        navigation.navigate("ScreenAI31");
+        navigation.navigate("ScreenAI53");
       }}><Text key={index} style={styles.text}>
             {option}
           </Text></Pressable>)}
