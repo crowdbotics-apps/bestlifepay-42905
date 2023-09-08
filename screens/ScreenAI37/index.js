@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, Button, TextInput, FlatList } from 'react-native';
@@ -28,7 +29,7 @@ const MyEcoMailbox = () => {
         <FlatList data={dummyData} keyExtractor={item => item.id} renderItem={({
         item
       }) => <View style={_styles.nCTGdeHJ}>
-              <Text>{item.date}</Text>
+              <Pressable><Text>{item.date}</Text></Pressable>
               <Text>{item.sender}</Text>
               <View style={_styles.DRhskxen}>
                 <Button title="View" onPress={() => {}} />
