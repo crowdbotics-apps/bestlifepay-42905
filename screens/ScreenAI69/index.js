@@ -14,13 +14,13 @@ const data = Array(10).fill({
 });
 
 const ScreenComponent = () => {
-  return <SafeAreaView style={_styles.KStuTCOU}>
-      <View style={_styles.CrMBeEcd}>
-        <Text style={_styles.rsELDZjb}>Campaign History</Text>
-        <TextInput placeholder="Search" style={_styles.yKJXZfGU} />
+  return <SafeAreaView style={_styles.zysTtHnG}>
+      <View style={_styles.EkSNGKmj}>
+        <Text style={_styles.YaiENqhW}>Campaign History</Text>
+        <TextInput placeholder="Search" style={_styles.GTMdJQYK} />
         <FlatList data={data} keyExtractor={(item, index) => index.toString()} renderItem={({
         item
-      }) => <View style={_styles.SSxXbvMv}>
+      }) => <View style={_styles.xCbqTpOx}>
               <View>
                 <Text>{item.fileName}</Text>
                 <Text>{item.createdOn}</Text>
@@ -30,17 +30,17 @@ const ScreenComponent = () => {
                 <Text>{item.totalBalance}</Text>
                 <Image source={{
             uri: item.qrCode
-          }} style={_styles.lvrWQqIe} />
+          }} style={_styles.DxnHtJdM} />
                 <Text>{item.type}</Text>
                 <Text>{item.sentVia}</Text>
               </View>
               <View>
                 <Button title="Resend" onPress={() => {}} />
-                <Button title="Delete" onPress={() => {}} style={_styles.DUKEQPkN} />
-                <Button title="Export" onPress={() => {}} style={_styles.geKEDzwj} />
+                <Button title="Delete" onPress={() => {}} style={_styles.HBJJljir} />
+                <Button title="Export" onPress={() => {}} style={_styles.yUdbQTqC} />
               </View>
             </View>} />
-        <View style={_styles.ToNKTaJS}>
+        <View style={_styles.JbYXeXvi}>
           <Button title="Previous" onPress={() => {}} />
           <Button title="Next" onPress={() => {}} />
         </View>
@@ -51,43 +51,44 @@ const ScreenComponent = () => {
 export default ScreenComponent;
 
 const _styles = StyleSheet.create({
-  KStuTCOU: {
+  zysTtHnG: {
     flex: 1,
     backgroundColor: "#fff"
   },
-  CrMBeEcd: {
+  EkSNGKmj: {
     padding: 20
   },
-  rsELDZjb: {
+  YaiENqhW: {
     fontSize: 24,
     fontWeight: "bold"
   },
-  yKJXZfGU: {
+  GTMdJQYK: {
     marginTop: 20,
     borderWidth: 1,
     borderColor: "#ddd",
     padding: 10,
     borderRadius: 5
   },
-  SSxXbvMv: {
+  xCbqTpOx: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-    paddingBottom: 20
+    padding: 10,
+    borderWidth: 1,
+    borderColor: "#ddd",
+    borderRadius: 5
   },
-  lvrWQqIe: {
+  DxnHtJdM: {
     width: 50,
     height: 50
   },
-  DUKEQPkN: {
+  HBJJljir: {
     marginTop: 10
   },
-  geKEDzwj: {
+  yUdbQTqC: {
     marginTop: 10
   },
-  ToNKTaJS: {
+  JbYXeXvi: {
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20

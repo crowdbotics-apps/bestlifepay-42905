@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import React from "react";
@@ -70,7 +71,9 @@ const ScreenComponent = () => {
           <Text style={_styles.zEQwslnI}>List of all campaigns</Text>
           {dummyData.map((data, index) => <View key={index} style={_styles.bBGZbfNA}>
               <Text>{data.fileName}</Text>
-              <Text>{data.createdOn}</Text>
+              <Pressable onPress={() => {
+            navigation.navigate("ScreenAI68");
+          }}><Text>{data.createdOn}</Text></Pressable>
               <Text>{data.uploadedOn}</Text>
               <Text>{data.createdBy}</Text>
               <Text>{data.numberOfConsumers}</Text>
