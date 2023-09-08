@@ -76,7 +76,9 @@ const ScreenComponent = () => {
           <Text>Page number</Text>
           <Button title="Next" onPress={() => {}} />
         </View>
-      </ScrollView>
+      <Pressable onPress={() => {
+        navigation.navigate("ScreenAI721");
+      }}><Text style={_styles.vOhWWyCI}>{"Manage Users"}</Text></Pressable></ScrollView>
     </SafeAreaView>;
 };
 
@@ -204,6 +206,13 @@ const _styles = StyleSheet.create({
     marginTop: 20
   },
   sFgeCxOs: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  vOhWWyCI: {
     width: 100,
     height: 50,
     lineHeight: 14,

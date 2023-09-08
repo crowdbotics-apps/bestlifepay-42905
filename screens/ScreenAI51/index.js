@@ -1,19 +1,26 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, Button, StyleSheet, Image } from 'react-native';
 
 const DonationScreen = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.container}>
       <Text style={styles.title}>What type of donation do you want to make?</Text>
       <View style={styles.optionContainer}>
-        <Image style={styles.image} source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} />
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI79");
+      }}><Image style={styles.image} source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} /></Pressable>
         <Button title="Donate to someone you know" onPress={() => {}} />
       </View>
       <View style={styles.optionContainer}>
-        <Image style={styles.image} source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} />
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI81");
+      }}><Image style={styles.image} source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} /></Pressable>
         <Button title="Create a group donation" onPress={() => {}} />
       </View>
       <View style={styles.buttonContainer}>
