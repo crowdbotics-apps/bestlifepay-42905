@@ -1,8 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, Button, Switch, Picker } from 'react-native';
 
 const DonationScreen = () => {
+  const navigation = useNavigation();
   const [amount, setAmount] = useState('');
   const [numPeople, setNumPeople] = useState('');
   const [donateAll, setDonateAll] = useState(false);
@@ -43,10 +46,12 @@ const DonationScreen = () => {
       <TextInput style={_styles.LcLDzChG} onChangeText={text => setAmountPerPerson(text)} value={amountPerPerson} />
       <Text>Your Total Donation:</Text>
       <TextInput style={_styles.FWUXDOiS} onChangeText={text => setTotalDonation(text)} value={totalDonation} />
-      <View style={_styles.zHrwLdSM}>
+      <Pressable onPress={() => {
+      navigation.navigate("ScreenAI85");
+    }}><View style={_styles.zHrwLdSM}>
         <Button title="Previous" onPress={() => console.log('Previous')} />
         <Button title="Next" onPress={() => console.log('Next')} />
-      </View>
+      </View></Pressable>
     </SafeAreaView>;
 };
 

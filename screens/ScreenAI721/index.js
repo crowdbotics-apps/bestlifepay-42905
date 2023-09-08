@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, Button, FlatList, StyleSheet } from 'react-native';
 
@@ -18,15 +19,15 @@ const UserScreen = () => {
     item
   }) => <View style={styles.row}>
       <Text style={styles.cell}>{item.firstName}</Text>
-      <Text style={styles.cell}>{item.lastName}</Text>
+      <Pressable><Text style={styles.cell}>{item.lastName}</Text></Pressable>
       <Text style={styles.cell}>{item.email}</Text>
       <Text style={styles.cell}>{item.accessTo}</Text>
       <Text style={styles.cell}>{item.status}</Text>
-      <View style={styles.cell}>
+      <Pressable><View style={styles.cell}>
         <Button title="Edit" onPress={() => {}} />
         <Button title="Reset Password" onPress={() => {}} />
-      </View>
-    </View>;
+      </View></Pressable>
+    <Pressable><Text style={styles.DGqcqSZZ}>{"Create New User"}</Text></Pressable></View>;
 
   return <SafeAreaView style={styles.container}>
       <Button title="Create User" onPress={() => {}} />
@@ -66,6 +67,13 @@ const styles = StyleSheet.create({
   },
   header: {
     fontWeight: 'bold'
+  },
+  DGqcqSZZ: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default UserScreen;

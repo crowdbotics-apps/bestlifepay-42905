@@ -1,8 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 import React from 'react';
-import { SafeAreaView, TextInput, Button, Picker } from 'react-native';
+import { SafeAreaView, Text, TextInput, Button, Picker } from 'react-native';
 
 const ScreenComponent = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={_styles.dIOYwLHp}>
       <TextInput placeholder="Phone number" style={_styles.nOdBduqA} />
       <Picker>
@@ -35,7 +38,11 @@ const ScreenComponent = () => {
       <TextInput placeholder="Discounted Payoff Balance" style={_styles.MHuajyli} />
       <TextInput placeholder="Payment Plan Current Balance" style={_styles.LVZPftvn} />
       <TextInput placeholder="First Payment Date" style={_styles.bZtOWFVq} />
-    </SafeAreaView>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI76");
+    }}><Text style={_styles.WoaOxobP}>{"Communication Permissions "}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI77");
+    }}><Text style={_styles.yHsAEETj}>{"Pay terms"}</Text></Pressable></SafeAreaView>;
 };
 
 export default ScreenComponent;
@@ -119,5 +126,22 @@ const _styles = StyleSheet.create({
     height: 40,
     borderColor: "gray",
     borderWidth: 1
+  },
+  WoaOxobP: {
+    width: 254,
+    height: 27,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0,
+    position: "absolute",
+    left: 73,
+    top: -554
+  },
+  yHsAEETj: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });

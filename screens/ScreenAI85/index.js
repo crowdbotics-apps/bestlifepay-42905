@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React from 'react';
 import { SafeAreaView, View, Text, Button, StyleSheet, ScrollView, TextInput, Picker } from 'react-native';
 
 const DonationScreen = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.container}>
       <ScrollView>
         <Text style={styles.title}>Donation steps</Text>
@@ -25,10 +28,12 @@ const DonationScreen = () => {
           <Picker.Item label="Crypto Currency" value="crypto" />
           <Picker.Item label="ACH" value="ach" />
         </Picker>
-        <View style={styles.buttonContainer}>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI86");
+      }}><View style={styles.buttonContainer}>
           <Button title="Previous" onPress={() => {}} />
           <Button title="Next" onPress={() => {}} />
-        </View>
+        </View></Pressable>
       </ScrollView>
     </SafeAreaView>;
 };
