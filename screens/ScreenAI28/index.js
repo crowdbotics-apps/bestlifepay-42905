@@ -17,7 +17,9 @@ const MyAccountsScreen = () => {
   return <SafeAreaView style={_styles.uzrFoGEM}>
       <TextInput placeholder="Search" style={_styles.GAOgBpal} />
 
-      <View style={_styles.ysXoHqfj}>
+      <View style={_styles.ysXoHqfj} onPress={() => {
+      navigation.navigate("ScreenAI31");
+    }}>
         <Image source={{
         uri: 'https://tinyurl.com/42evm3m3'
       }} style={_styles.WdmCllZP} />
