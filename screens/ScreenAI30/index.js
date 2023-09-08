@@ -37,7 +37,7 @@ const ScreenComponent = () => {
       <Image style={styles.image} source={{
       uri: 'https://tinyurl.com/42evm3m3'
     }} />
-    </SafeAreaView>;
+    <Text>Donate Now</Text></SafeAreaView>;
 };
 
 const styles = StyleSheet.create({

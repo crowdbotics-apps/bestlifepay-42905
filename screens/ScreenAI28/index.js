@@ -28,8 +28,12 @@ const MyAccountsScreen = () => {
 
       <FlatList data={accounts} keyExtractor={item => item.id} renderItem={({
       item
-    }) => <Pressable><View style={_styles.RCTuqXNZ}>
-            <Pressable><Text>{item.name}</Text></Pressable>
+    }) => <Pressable onPress={() => {
+      navigation.navigate("ScreenAI30");
+    }}><View style={_styles.RCTuqXNZ}>
+            <Pressable onPress={() => {
+          navigation.navigate("ScreenAI29");
+        }}><Text>{item.name}</Text></Pressable>
             <Text>{item.originalBalance}</Text>
             <Text>{item.saveNow}</Text>
             <Text>{item.status}</Text>
