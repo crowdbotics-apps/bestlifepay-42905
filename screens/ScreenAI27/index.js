@@ -26,7 +26,9 @@ const ScreenComponent = () => {
         <Image source={{
         uri: 'https://tinyurl.com/42evm3m3'
       }} style={_styles.GBiGXCnG} />
-      </View>
+      <Pressable onPress={() => {
+        navigation.navigate("ScreenAI62");
+      }}><Text style={_styles.sFgeCxOs}>{"EcoCommunications"}</Text></Pressable></View>
       <ScrollView style={_styles.deVuDEoB}>
         <View style={_styles.xzzMnrec}>
           <Pressable onPress={() => {
@@ -200,5 +202,12 @@ const _styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20
+  },
+  sFgeCxOs: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
