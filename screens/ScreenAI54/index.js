@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, Button, Image, StyleSheet, Picker } from 'react-native';
 
 const AddFundsScreen = () => {
+  const navigation = useNavigation();
   const [amount, setAmount] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
   return <SafeAreaView style={styles.container}>
@@ -21,7 +24,13 @@ const AddFundsScreen = () => {
         <Button title="Add Funds" onPress={() => {}} />
         <Button title="Cancel" color="red" onPress={() => {}} />
       </View>
-    </SafeAreaView>;
+    <Pressable onPress={() => {
+      navigation.navigate("ScreenAI55");
+    }}><Text style={styles.crYztSjw}>{"Transfer Fund"}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI56");
+    }}><Text style={styles.JOtaSANR}>{"Withdraw fund"}</Text></Pressable><Pressable onPress={() => {
+      navigation.navigate("ScreenAI57");
+    }}><Text style={styles.cqaWoEGG}>{"Transaction History "}</Text></Pressable></SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
@@ -62,6 +71,27 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between'
+  },
+  crYztSjw: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  JOtaSANR: {
+    width: 100,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
+  },
+  cqaWoEGG: {
+    width: 133,
+    height: 50,
+    lineHeight: 14,
+    fontSize: 14,
+    borderRadius: 0
   }
 });
 export default AddFundsScreen;
