@@ -1,3 +1,7 @@
+from rest_framework import viewsets
+from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,ConsumerOffer,ImportedFile,LoanAccount,Payment,ConsumerOffer,ImportedFile,LoanAccount,Payment
+from .serializers import ImportedFileSerializer,ConsumerOfferSerializer,LoanAccountSerializer,PaymentSerializer,ConsumerOfferSerializer,ImportedFileSerializer,LoanAccountSerializer,PaymentSerializer,ConsumerOfferSerializer,ImportedFileSerializer,LoanAccountSerializer,PaymentSerializer
+from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
 from rest_framework.authtoken.models import Token
@@ -28,3 +32,23 @@ class LoginViewSet(ViewSet):
         token, created = Token.objects.get_or_create(user=user)
         user_serializer = UserSerializer(user)
         return Response({"token": token.key, "user": user_serializer.data})
+
+class ImportedFileViewSet(viewsets.ModelViewSet):
+    serializer_class = ImportedFileSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = ImportedFile.objects.all()
+
+class ConsumerOfferViewSet(viewsets.ModelViewSet):
+    serializer_class = ConsumerOfferSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = ConsumerOffer.objects.all()
+
+class LoanAccountViewSet(viewsets.ModelViewSet):
+    serializer_class = LoanAccountSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = LoanAccount.objects.all()
+
+class PaymentViewSet(viewsets.ModelViewSet):
+    serializer_class = PaymentSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Payment.objects.all()

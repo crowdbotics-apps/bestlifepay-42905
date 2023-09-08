@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,ConsumerOffer,ImportedFile,LoanAccount,Payment
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -74,3 +75,27 @@ class UserSerializer(serializers.ModelSerializer):
 class PasswordSerializer(PasswordResetSerializer):
     """Custom serializer for rest_auth to solve reset password error"""
     password_reset_form_class = ResetPasswordForm
+
+class ImportedFileSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ImportedFile
+        fields = "__all__"
+
+class ConsumerOfferSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ConsumerOffer
+        fields = "__all__"
+
+class LoanAccountSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = LoanAccount
+        fields = "__all__"
+
+class PaymentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Payment
+        fields = "__all__"
