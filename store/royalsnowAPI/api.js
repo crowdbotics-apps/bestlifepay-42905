@@ -53,6 +53,42 @@ function api_v1_businessownerdata_partial_update(payload) {
 function api_v1_businessownerdata_destroy(payload) {
   return royalsnowAPI.delete(`/api/v1/businessownerdata/${payload.id}/`)
 }
+function api_v1_businessrule_list(payload) {
+  return royalsnowAPI.get(`/api/v1/businessrule/`)
+}
+function api_v1_businessrule_create(payload) {
+  return royalsnowAPI.post(`/api/v1/businessrule/`, payload.data)
+}
+function api_v1_businessrule_retrieve(payload) {
+  return royalsnowAPI.get(`/api/v1/businessrule/${payload.id}/`)
+}
+function api_v1_businessrule_update(payload) {
+  return royalsnowAPI.put(`/api/v1/businessrule/${payload.id}/`, payload.data)
+}
+function api_v1_businessrule_partial_update(payload) {
+  return royalsnowAPI.patch(`/api/v1/businessrule/${payload.id}/`, payload.data)
+}
+function api_v1_businessrule_destroy(payload) {
+  return royalsnowAPI.delete(`/api/v1/businessrule/${payload.id}/`)
+}
+function api_v1_campaign_list(payload) {
+  return royalsnowAPI.get(`/api/v1/campaign/`)
+}
+function api_v1_campaign_create(payload) {
+  return royalsnowAPI.post(`/api/v1/campaign/`, payload.data)
+}
+function api_v1_campaign_retrieve(payload) {
+  return royalsnowAPI.get(`/api/v1/campaign/${payload.id}/`)
+}
+function api_v1_campaign_update(payload) {
+  return royalsnowAPI.put(`/api/v1/campaign/${payload.id}/`, payload.data)
+}
+function api_v1_campaign_partial_update(payload) {
+  return royalsnowAPI.patch(`/api/v1/campaign/${payload.id}/`, payload.data)
+}
+function api_v1_campaign_destroy(payload) {
+  return royalsnowAPI.delete(`/api/v1/campaign/${payload.id}/`)
+}
 function api_v1_city_list(payload) {
   return royalsnowAPI.get(`/api/v1/city/`)
 }
@@ -91,6 +127,24 @@ function api_v1_consumeroffer_partial_update(payload) {
 }
 function api_v1_consumeroffer_destroy(payload) {
   return royalsnowAPI.delete(`/api/v1/consumeroffer/${payload.id}/`)
+}
+function api_v1_content_list(payload) {
+  return royalsnowAPI.get(`/api/v1/content/`)
+}
+function api_v1_content_create(payload) {
+  return royalsnowAPI.post(`/api/v1/content/`, payload.data)
+}
+function api_v1_content_retrieve(payload) {
+  return royalsnowAPI.get(`/api/v1/content/${payload.id}/`)
+}
+function api_v1_content_update(payload) {
+  return royalsnowAPI.put(`/api/v1/content/${payload.id}/`, payload.data)
+}
+function api_v1_content_partial_update(payload) {
+  return royalsnowAPI.patch(`/api/v1/content/${payload.id}/`, payload.data)
+}
+function api_v1_content_destroy(payload) {
+  return royalsnowAPI.delete(`/api/v1/content/${payload.id}/`)
 }
 function api_v1_country_list(payload) {
   return royalsnowAPI.get(`/api/v1/country/`)
@@ -212,6 +266,30 @@ function api_v1_membershipplan_partial_update(payload) {
 function api_v1_membershipplan_destroy(payload) {
   return royalsnowAPI.delete(`/api/v1/membershipplan/${payload.id}/`)
 }
+function api_v1_merchantaccount_list(payload) {
+  return royalsnowAPI.get(`/api/v1/merchantaccount/`)
+}
+function api_v1_merchantaccount_create(payload) {
+  return royalsnowAPI.post(`/api/v1/merchantaccount/`, payload.data)
+}
+function api_v1_merchantaccount_retrieve(payload) {
+  return royalsnowAPI.get(`/api/v1/merchantaccount/${payload.id}/`)
+}
+function api_v1_merchantaccount_update(payload) {
+  return royalsnowAPI.put(
+    `/api/v1/merchantaccount/${payload.id}/`,
+    payload.data
+  )
+}
+function api_v1_merchantaccount_partial_update(payload) {
+  return royalsnowAPI.patch(
+    `/api/v1/merchantaccount/${payload.id}/`,
+    payload.data
+  )
+}
+function api_v1_merchantaccount_destroy(payload) {
+  return royalsnowAPI.delete(`/api/v1/merchantaccount/${payload.id}/`)
+}
 function api_v1_payment_list(payload) {
   return royalsnowAPI.get(`/api/v1/payment/`)
 }
@@ -229,6 +307,42 @@ function api_v1_payment_partial_update(payload) {
 }
 function api_v1_payment_destroy(payload) {
   return royalsnowAPI.delete(`/api/v1/payment/${payload.id}/`)
+}
+function api_v1_reporting_list(payload) {
+  return royalsnowAPI.get(`/api/v1/reporting/`)
+}
+function api_v1_reporting_create(payload) {
+  return royalsnowAPI.post(`/api/v1/reporting/`, payload.data)
+}
+function api_v1_reporting_retrieve(payload) {
+  return royalsnowAPI.get(`/api/v1/reporting/${payload.id}/`)
+}
+function api_v1_reporting_update(payload) {
+  return royalsnowAPI.put(`/api/v1/reporting/${payload.id}/`, payload.data)
+}
+function api_v1_reporting_partial_update(payload) {
+  return royalsnowAPI.patch(`/api/v1/reporting/${payload.id}/`, payload.data)
+}
+function api_v1_reporting_destroy(payload) {
+  return royalsnowAPI.delete(`/api/v1/reporting/${payload.id}/`)
+}
+function api_v1_reward_list(payload) {
+  return royalsnowAPI.get(`/api/v1/reward/`)
+}
+function api_v1_reward_create(payload) {
+  return royalsnowAPI.post(`/api/v1/reward/`, payload.data)
+}
+function api_v1_reward_retrieve(payload) {
+  return royalsnowAPI.get(`/api/v1/reward/${payload.id}/`)
+}
+function api_v1_reward_update(payload) {
+  return royalsnowAPI.put(`/api/v1/reward/${payload.id}/`, payload.data)
+}
+function api_v1_reward_partial_update(payload) {
+  return royalsnowAPI.patch(`/api/v1/reward/${payload.id}/`, payload.data)
+}
+function api_v1_reward_destroy(payload) {
+  return royalsnowAPI.delete(`/api/v1/reward/${payload.id}/`)
 }
 function api_v1_signup_create(payload) {
   return royalsnowAPI.post(`/api/v1/signup/`, payload.data)
@@ -268,6 +382,42 @@ function api_v1_subscription_partial_update(payload) {
 }
 function api_v1_subscription_destroy(payload) {
   return royalsnowAPI.delete(`/api/v1/subscription/${payload.id}/`)
+}
+function api_v1_template_list(payload) {
+  return royalsnowAPI.get(`/api/v1/template/`)
+}
+function api_v1_template_create(payload) {
+  return royalsnowAPI.post(`/api/v1/template/`, payload.data)
+}
+function api_v1_template_retrieve(payload) {
+  return royalsnowAPI.get(`/api/v1/template/${payload.id}/`)
+}
+function api_v1_template_update(payload) {
+  return royalsnowAPI.put(`/api/v1/template/${payload.id}/`, payload.data)
+}
+function api_v1_template_partial_update(payload) {
+  return royalsnowAPI.patch(`/api/v1/template/${payload.id}/`, payload.data)
+}
+function api_v1_template_destroy(payload) {
+  return royalsnowAPI.delete(`/api/v1/template/${payload.id}/`)
+}
+function api_v1_useractivity_list(payload) {
+  return royalsnowAPI.get(`/api/v1/useractivity/`)
+}
+function api_v1_useractivity_create(payload) {
+  return royalsnowAPI.post(`/api/v1/useractivity/`, payload.data)
+}
+function api_v1_useractivity_retrieve(payload) {
+  return royalsnowAPI.get(`/api/v1/useractivity/${payload.id}/`)
+}
+function api_v1_useractivity_update(payload) {
+  return royalsnowAPI.put(`/api/v1/useractivity/${payload.id}/`, payload.data)
+}
+function api_v1_useractivity_partial_update(payload) {
+  return royalsnowAPI.patch(`/api/v1/useractivity/${payload.id}/`, payload.data)
+}
+function api_v1_useractivity_destroy(payload) {
+  return royalsnowAPI.delete(`/api/v1/useractivity/${payload.id}/`)
 }
 function rest_auth_login_create(payload) {
   return royalsnowAPI.post(`/rest-auth/login/`, payload.data)
@@ -319,6 +469,18 @@ export const apiService = {
   api_v1_businessownerdata_update,
   api_v1_businessownerdata_partial_update,
   api_v1_businessownerdata_destroy,
+  api_v1_businessrule_list,
+  api_v1_businessrule_create,
+  api_v1_businessrule_retrieve,
+  api_v1_businessrule_update,
+  api_v1_businessrule_partial_update,
+  api_v1_businessrule_destroy,
+  api_v1_campaign_list,
+  api_v1_campaign_create,
+  api_v1_campaign_retrieve,
+  api_v1_campaign_update,
+  api_v1_campaign_partial_update,
+  api_v1_campaign_destroy,
   api_v1_city_list,
   api_v1_city_create,
   api_v1_city_retrieve,
@@ -331,6 +493,12 @@ export const apiService = {
   api_v1_consumeroffer_update,
   api_v1_consumeroffer_partial_update,
   api_v1_consumeroffer_destroy,
+  api_v1_content_list,
+  api_v1_content_create,
+  api_v1_content_retrieve,
+  api_v1_content_update,
+  api_v1_content_partial_update,
+  api_v1_content_destroy,
   api_v1_country_list,
   api_v1_country_create,
   api_v1_country_retrieve,
@@ -368,12 +536,30 @@ export const apiService = {
   api_v1_membershipplan_update,
   api_v1_membershipplan_partial_update,
   api_v1_membershipplan_destroy,
+  api_v1_merchantaccount_list,
+  api_v1_merchantaccount_create,
+  api_v1_merchantaccount_retrieve,
+  api_v1_merchantaccount_update,
+  api_v1_merchantaccount_partial_update,
+  api_v1_merchantaccount_destroy,
   api_v1_payment_list,
   api_v1_payment_create,
   api_v1_payment_retrieve,
   api_v1_payment_update,
   api_v1_payment_partial_update,
   api_v1_payment_destroy,
+  api_v1_reporting_list,
+  api_v1_reporting_create,
+  api_v1_reporting_retrieve,
+  api_v1_reporting_update,
+  api_v1_reporting_partial_update,
+  api_v1_reporting_destroy,
+  api_v1_reward_list,
+  api_v1_reward_create,
+  api_v1_reward_retrieve,
+  api_v1_reward_update,
+  api_v1_reward_partial_update,
+  api_v1_reward_destroy,
   api_v1_signup_create,
   api_v1_state_list,
   api_v1_state_create,
@@ -387,6 +573,18 @@ export const apiService = {
   api_v1_subscription_update,
   api_v1_subscription_partial_update,
   api_v1_subscription_destroy,
+  api_v1_template_list,
+  api_v1_template_create,
+  api_v1_template_retrieve,
+  api_v1_template_update,
+  api_v1_template_partial_update,
+  api_v1_template_destroy,
+  api_v1_useractivity_list,
+  api_v1_useractivity_create,
+  api_v1_useractivity_retrieve,
+  api_v1_useractivity_update,
+  api_v1_useractivity_partial_update,
+  api_v1_useractivity_destroy,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
