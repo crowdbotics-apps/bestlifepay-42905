@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .viewsets import ImportedFileViewSet,ConsumerOfferViewSet,LoanAccountViewSet,PaymentViewSet,BusinessOwnerDataViewSet,MembershipPlanViewSet,StateViewSet,BillingDetailsViewSet,CountryViewSet,SubscriptionViewSet,CreditorBusinessDataViewSet,CityViewSet,DonationViewSet,BillingDetailsViewSet,BusinessOwnerDataViewSet,CityViewSet,ConsumerOfferViewSet,CountryViewSet,CreditorBusinessDataViewSet,DonationViewSet,ImportedFileViewSet,LoanAccountViewSet,MembershipPlanViewSet,PaymentViewSet,StateViewSet,SubscriptionViewSet,BillingDetailsViewSet,BusinessOwnerDataViewSet,CityViewSet,ConsumerOfferViewSet,CountryViewSet,CreditorBusinessDataViewSet,DonationViewSet,ImportedFileViewSet,LoanAccountViewSet,MembershipPlanViewSet,PaymentViewSet,StateViewSet,SubscriptionViewSet,BillingDetailsViewSet,BusinessOwnerDataViewSet,CityViewSet,ConsumerOfferViewSet,CountryViewSet,CreditorBusinessDataViewSet,DonationViewSet,ImportedFileViewSet,LoanAccountViewSet,MembershipPlanViewSet,PaymentViewSet,StateViewSet,SubscriptionViewSet
+from .viewsets import ImportedFileViewSet,ConsumerOfferViewSet,LoanAccountViewSet,PaymentViewSet,BusinessOwnerDataViewSet,MembershipPlanViewSet,StateViewSet,BillingDetailsViewSet,CountryViewSet,SubscriptionViewSet,CreditorBusinessDataViewSet,CityViewSet,DonationViewSet,RewardViewSet,MerchantAccountViewSet,ContentViewSet,BusinessRuleViewSet,ReportingViewSet,TemplateViewSet,UserActivityViewSet,CampaignViewSet,BillingDetailsViewSet,BusinessOwnerDataViewSet,BusinessRuleViewSet,CampaignViewSet,CityViewSet,ConsumerOfferViewSet,ContentViewSet,CountryViewSet,CreditorBusinessDataViewSet,DonationViewSet,ImportedFileViewSet,LoanAccountViewSet,MembershipPlanViewSet,MerchantAccountViewSet,PaymentViewSet,ReportingViewSet,RewardViewSet,StateViewSet,SubscriptionViewSet,TemplateViewSet,UserActivityViewSet,BillingDetailsViewSet,BusinessOwnerDataViewSet,BusinessRuleViewSet,CampaignViewSet,CityViewSet,ConsumerOfferViewSet,ContentViewSet,CountryViewSet,CreditorBusinessDataViewSet,DonationViewSet,ImportedFileViewSet,LoanAccountViewSet,MembershipPlanViewSet,MerchantAccountViewSet,PaymentViewSet,ReportingViewSet,RewardViewSet,StateViewSet,SubscriptionViewSet,TemplateViewSet,UserActivityViewSet,BillingDetailsViewSet,BusinessOwnerDataViewSet,BusinessRuleViewSet,CampaignViewSet,CityViewSet,ConsumerOfferViewSet,ContentViewSet,CountryViewSet,CreditorBusinessDataViewSet,DonationViewSet,ImportedFileViewSet,LoanAccountViewSet,MembershipPlanViewSet,MerchantAccountViewSet,PaymentViewSet,ReportingViewSet,RewardViewSet,StateViewSet,SubscriptionViewSet,TemplateViewSet,UserActivityViewSet
 
 from home.api.v1.viewsets import (
     SignupViewSet,
@@ -23,6 +23,14 @@ router.register('subscription', SubscriptionViewSet )
 router.register('creditorbusinessdata', CreditorBusinessDataViewSet )
 router.register('city', CityViewSet )
 router.register('donation', DonationViewSet )
+router.register('reward', RewardViewSet )
+router.register('merchantaccount', MerchantAccountViewSet )
+router.register('content', ContentViewSet )
+router.register('businessrule', BusinessRuleViewSet )
+router.register('reporting', ReportingViewSet )
+router.register('template', TemplateViewSet )
+router.register('useractivity', UserActivityViewSet )
+router.register('campaign', CampaignViewSet )
 
 urlpatterns = [
     path("", include(router.urls)),

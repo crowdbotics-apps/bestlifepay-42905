@@ -100,3 +100,30 @@ class City(models.Model):
 class Donation(models.Model):
     'Generated Model'
     amount = models.FloatField()
+class Reward(models.Model):
+    'Generated Model'
+    amount = models.FloatField()
+class MerchantAccount(models.Model):
+    'Generated Model'
+    name = models.TextField()
+class Content(models.Model):
+    'Generated Model'
+    image = models.ImageField(upload_to="content/image/images/",)
+    content = models.TextField()
+class BusinessRule(models.Model):
+    'Generated Model'
+    name = models.TextField()
+class Reporting(models.Model):
+    'Generated Model'
+    name = models.TextField()
+class Template(models.Model):
+    'Generated Model'
+    name = models.TextField()
+class UserActivity(models.Model):
+    'Generated Model'
+    user = models.OneToOneField("users.User",on_delete=models.CASCADE,related_name="useractivity_user",)
+    datetime = models.DateTimeField()
+    log = models.TextField()
+class Campaign(models.Model):
+    'Generated Model'
+    name = models.TextField()

@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,Donation,BillingDetails,BusinessOwnerData,City,ConsumerOffer,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,Payment,State,Subscription,BillingDetails,BusinessOwnerData,City,ConsumerOffer,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,Payment,State,Subscription
-from .serializers import ImportedFileSerializer,ConsumerOfferSerializer,LoanAccountSerializer,PaymentSerializer,BusinessOwnerDataSerializer,MembershipPlanSerializer,StateSerializer,BillingDetailsSerializer,CountrySerializer,SubscriptionSerializer,CreditorBusinessDataSerializer,CitySerializer,DonationSerializer,BillingDetailsSerializer,BusinessOwnerDataSerializer,CitySerializer,ConsumerOfferSerializer,CountrySerializer,CreditorBusinessDataSerializer,DonationSerializer,ImportedFileSerializer,LoanAccountSerializer,MembershipPlanSerializer,PaymentSerializer,StateSerializer,SubscriptionSerializer,BillingDetailsSerializer,BusinessOwnerDataSerializer,CitySerializer,ConsumerOfferSerializer,CountrySerializer,CreditorBusinessDataSerializer,DonationSerializer,ImportedFileSerializer,LoanAccountSerializer,MembershipPlanSerializer,PaymentSerializer,StateSerializer,SubscriptionSerializer
+from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,Donation,Reward,MerchantAccount,Content,BusinessRule,Reporting,Template,UserActivity,Campaign,BillingDetails,BusinessOwnerData,BusinessRule,Campaign,City,ConsumerOffer,Content,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,MerchantAccount,Payment,Reporting,Reward,State,Subscription,Template,UserActivity,BillingDetails,BusinessOwnerData,BusinessRule,Campaign,City,ConsumerOffer,Content,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,MerchantAccount,Payment,Reporting,Reward,State,Subscription,Template,UserActivity
+from .serializers import ImportedFileSerializer,ConsumerOfferSerializer,LoanAccountSerializer,PaymentSerializer,BusinessOwnerDataSerializer,MembershipPlanSerializer,StateSerializer,BillingDetailsSerializer,CountrySerializer,SubscriptionSerializer,CreditorBusinessDataSerializer,CitySerializer,DonationSerializer,RewardSerializer,MerchantAccountSerializer,ContentSerializer,BusinessRuleSerializer,ReportingSerializer,TemplateSerializer,UserActivitySerializer,CampaignSerializer,BillingDetailsSerializer,BusinessOwnerDataSerializer,BusinessRuleSerializer,CampaignSerializer,CitySerializer,ConsumerOfferSerializer,ContentSerializer,CountrySerializer,CreditorBusinessDataSerializer,DonationSerializer,ImportedFileSerializer,LoanAccountSerializer,MembershipPlanSerializer,MerchantAccountSerializer,PaymentSerializer,ReportingSerializer,RewardSerializer,StateSerializer,SubscriptionSerializer,TemplateSerializer,UserActivitySerializer,BillingDetailsSerializer,BusinessOwnerDataSerializer,BusinessRuleSerializer,CampaignSerializer,CitySerializer,ConsumerOfferSerializer,ContentSerializer,CountrySerializer,CreditorBusinessDataSerializer,DonationSerializer,ImportedFileSerializer,LoanAccountSerializer,MembershipPlanSerializer,MerchantAccountSerializer,PaymentSerializer,ReportingSerializer,RewardSerializer,StateSerializer,SubscriptionSerializer,TemplateSerializer,UserActivitySerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -97,3 +97,43 @@ class DonationViewSet(viewsets.ModelViewSet):
     serializer_class = DonationSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Donation.objects.all()
+
+class RewardViewSet(viewsets.ModelViewSet):
+    serializer_class = RewardSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Reward.objects.all()
+
+class MerchantAccountViewSet(viewsets.ModelViewSet):
+    serializer_class = MerchantAccountSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = MerchantAccount.objects.all()
+
+class ContentViewSet(viewsets.ModelViewSet):
+    serializer_class = ContentSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Content.objects.all()
+
+class BusinessRuleViewSet(viewsets.ModelViewSet):
+    serializer_class = BusinessRuleSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = BusinessRule.objects.all()
+
+class ReportingViewSet(viewsets.ModelViewSet):
+    serializer_class = ReportingSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Reporting.objects.all()
+
+class TemplateViewSet(viewsets.ModelViewSet):
+    serializer_class = TemplateSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Template.objects.all()
+
+class UserActivityViewSet(viewsets.ModelViewSet):
+    serializer_class = UserActivitySerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = UserActivity.objects.all()
+
+class CampaignViewSet(viewsets.ModelViewSet):
+    serializer_class = CampaignSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Campaign.objects.all()

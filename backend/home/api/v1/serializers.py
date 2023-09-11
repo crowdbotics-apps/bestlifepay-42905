@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,Donation,BillingDetails,BusinessOwnerData,City,ConsumerOffer,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,Payment,State,Subscription
+from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,Donation,Reward,MerchantAccount,Content,BusinessRule,Reporting,Template,UserActivity,Campaign,BillingDetails,BusinessOwnerData,BusinessRule,Campaign,City,ConsumerOffer,Content,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,MerchantAccount,Payment,Reporting,Reward,State,Subscription,Template,UserActivity
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -152,4 +152,52 @@ class DonationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Donation
+        fields = "__all__"
+
+class RewardSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Reward
+        fields = "__all__"
+
+class MerchantAccountSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = MerchantAccount
+        fields = "__all__"
+
+class ContentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Content
+        fields = "__all__"
+
+class BusinessRuleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = BusinessRule
+        fields = "__all__"
+
+class ReportingSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Reporting
+        fields = "__all__"
+
+class TemplateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Template
+        fields = "__all__"
+
+class UserActivitySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UserActivity
+        fields = "__all__"
+
+class CampaignSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Campaign
         fields = "__all__"
