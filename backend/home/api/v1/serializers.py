@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,Donation,Reward,MerchantAccount,Content,BusinessRule,Reporting,Template,UserActivity,Campaign,BillingDetails,BusinessOwnerData,BusinessRule,Campaign,City,ConsumerOffer,Content,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,MerchantAccount,Payment,Reporting,Reward,State,Subscription,Template,UserActivity
+from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,Donation,Reward,MerchantAccount,Content,BusinessRule,Reporting,Template,UserActivity,Campaign,Address,Address,BillingDetails,BusinessOwnerData,BusinessRule,Campaign,City,ConsumerOffer,Content,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,MerchantAccount,Payment,Reporting,Reward,State,Subscription,Template,UserActivity
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -200,4 +200,10 @@ class CampaignSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Campaign
+        fields = "__all__"
+
+class AddressSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Address
         fields = "__all__"

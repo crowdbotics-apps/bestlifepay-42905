@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import BillingDetails,BusinessOwnerData,BusinessRule,Campaign,City,ConsumerOffer,Content,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,MerchantAccount,Payment,Reporting,Reward,State,Subscription,Template,UserActivity
+from .models import Address,BillingDetails,BusinessOwnerData,BusinessRule,Campaign,City,ConsumerOffer,Content,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,MerchantAccount,Payment,Reporting,Reward,State,Subscription,Template,UserActivity
 admin.site.register(ImportedFile)
 admin.site.register(ConsumerOffer)
 admin.site.register(LoanAccount)
@@ -21,5 +21,6 @@ admin.site.register(Reporting)
 admin.site.register(Template)
 admin.site.register(UserActivity)
 admin.site.register(Campaign)
+admin.site.register(Address)
 
 # Register your models here.
