@@ -134,6 +134,24 @@ function api_v1_creditorbusinessdata_partial_update(payload) {
 function api_v1_creditorbusinessdata_destroy(payload) {
   return royalsnowAPI.delete(`/api/v1/creditorbusinessdata/${payload.id}/`)
 }
+function api_v1_donation_list(payload) {
+  return royalsnowAPI.get(`/api/v1/donation/`)
+}
+function api_v1_donation_create(payload) {
+  return royalsnowAPI.post(`/api/v1/donation/`, payload.data)
+}
+function api_v1_donation_retrieve(payload) {
+  return royalsnowAPI.get(`/api/v1/donation/${payload.id}/`)
+}
+function api_v1_donation_update(payload) {
+  return royalsnowAPI.put(`/api/v1/donation/${payload.id}/`, payload.data)
+}
+function api_v1_donation_partial_update(payload) {
+  return royalsnowAPI.patch(`/api/v1/donation/${payload.id}/`, payload.data)
+}
+function api_v1_donation_destroy(payload) {
+  return royalsnowAPI.delete(`/api/v1/donation/${payload.id}/`)
+}
 function api_v1_importedfile_list(payload) {
   return royalsnowAPI.get(`/api/v1/importedfile/`)
 }
@@ -325,6 +343,12 @@ export const apiService = {
   api_v1_creditorbusinessdata_update,
   api_v1_creditorbusinessdata_partial_update,
   api_v1_creditorbusinessdata_destroy,
+  api_v1_donation_list,
+  api_v1_donation_create,
+  api_v1_donation_retrieve,
+  api_v1_donation_update,
+  api_v1_donation_partial_update,
+  api_v1_donation_destroy,
   api_v1_importedfile_list,
   api_v1_importedfile_create,
   api_v1_importedfile_retrieve,
