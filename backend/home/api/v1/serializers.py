@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,BillingDetails,BusinessOwnerData,City,ConsumerOffer,Country,CreditorBusinessData,ImportedFile,LoanAccount,MembershipPlan,Payment,State,Subscription
+from home.models import ImportedFile,ConsumerOffer,LoanAccount,Payment,BusinessOwnerData,MembershipPlan,State,BillingDetails,Country,Subscription,CreditorBusinessData,City,Donation,BillingDetails,BusinessOwnerData,City,ConsumerOffer,Country,CreditorBusinessData,Donation,ImportedFile,LoanAccount,MembershipPlan,Payment,State,Subscription
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -146,4 +146,10 @@ class CitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = City
+        fields = "__all__"
+
+class DonationSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Donation
         fields = "__all__"

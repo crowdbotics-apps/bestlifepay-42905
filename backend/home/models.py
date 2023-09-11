@@ -25,7 +25,7 @@ class LoanAccount(models.Model):
     name = models.TextField()
     originalBalance = models.FloatField()
     saveNowPercentage = models.FloatField()
-    payments = models.ManyToManyField("home.Payment",blank=True,related_name="loanaccount_payments",null=True,)
+    payments = models.ManyToManyField("home.Payment",null=True,blank=True,related_name="loanaccount_payments",)
 class Payment(models.Model):
     'Generated Model'
     transactionDate = models.DateTimeField()
@@ -90,10 +90,13 @@ class CreditorBusinessData(models.Model):
     companyWebsite = models.URLField()
     address1 = models.TextField()
     address2 = models.TextField()
-    state = models.OneToOneField("home.State",on_delete=models.CASCADE,null=True,blank=True,related_name="creditorbusinessdata_state",)
-    country = models.OneToOneField("home.Country",on_delete=models.CASCADE,null=True,blank=True,related_name="creditorbusinessdata_country",)
+    state = models.OneToOneField("home.State",null=True,blank=True,on_delete=models.CASCADE,related_name="creditorbusinessdata_state",)
+    country = models.OneToOneField("home.Country",null=True,blank=True,on_delete=models.CASCADE,related_name="creditorbusinessdata_country",)
     zipCode = models.TextField(null=True,blank=True,)
-    ownerData = models.OneToOneField("home.BusinessOwnerData",on_delete=models.CASCADE,null=True,blank=True,related_name="creditorbusinessdata_ownerData",)
+    ownerData = models.OneToOneField("home.BusinessOwnerData",null=True,blank=True,on_delete=models.CASCADE,related_name="creditorbusinessdata_ownerData",)
 class City(models.Model):
     'Generated Model'
     name = models.TextField()
+class Donation(models.Model):
+    'Generated Model'
+    amount = models.FloatField()
